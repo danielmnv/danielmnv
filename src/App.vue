@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <p class="text-h6 text-center">Resumee danielmnv</p>
+    <router-view></router-view>
   </v-app>
 </template>
 

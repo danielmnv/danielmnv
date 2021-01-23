@@ -9,26 +9,28 @@
                 <!-- Logo -->
                 <transition
                     appear
-                    appear-active-class="flipInX"
+                    :appear-active-class="mobile? 'bounceInLeft' : 'flipInX'"
                 >
-                    <img id="logoBackground" src="@/assets/dm.svg">
+                    <div>
+                        <img :class="`logo ${logoClass}`" src="@/assets/dm.svg">
+
+                    </div>
                 </transition>
 
                 <!-- Avatar, social media & name -->
                 <v-container fluid>
                     <v-row
-                        :no-gutters="mobile"
-                        :class="`${!mobile ? 'full-height-vh' : ''}`"
+                        class="full-height-vh"
                         align="center"
                         justify="center"
                     >
                         <v-col cols="12" md="5" lg="4">
                             
-                            <div :class="classAvatar">
+                            <div :class="avatarClass">
                                 <!-- Avatar -->
                                 <transition
                                     appear
-                                    appear-active-class="flipInY"
+                                    :appear-active-class="mobile? 'zoomIn' : 'flipInY'"
                                 >
                                     <v-avatar
                                         :size="!mobile ? '250px' : '170px'"
@@ -40,7 +42,7 @@
                                 <!-- Social Media -->
                                 <transition
                                     appear
-                                    appear-active-class="flipInY"
+                                    :appear-active-class="mobile? 'flipInX' : 'flipInY'"
                                 >
                                     <div :class="`pa-2 ${!mobile ? 'ml-5' : ''}`">
                                         <div
@@ -89,12 +91,12 @@
                         </v-col>
 
                         <!-- Name -->
-                        <v-col cols="12" md="7" offset-md="1">
+                        <v-col cols="12" md="7" lg="8">
                             <transition
                                 appear
-                                appear-active-class="bounceInRight"
+                                :appear-active-class="mobile? 'bounceInUp' : 'bounceInRight'"
                             >
-                                <p id="myName">Daniel Molina</p>
+                                <p id="myName" class="text-center">Daniel Molina</p>
                             </transition>
                         </v-col>
                     </v-row>
@@ -125,12 +127,22 @@ export default Vue.extend({
             return this.$vuetify.breakpoint.smAndDown;
         },
 
+        // Class for logo
+        logoClass() {
+            if (this.$vuetify.breakpoint.lgAndUp)
+                return 'logoDesktop';
+            else if (this.$vuetify.breakpoint.mdOnly)
+                return 'logoTablet';
+            
+            return 'logoMobile';
+        },
+
         // Class for avatar space
-        classAvatar() {
+        avatarClass() {
             if (!this.mobile)
                 return "d-flex justify-end"
             
-            return "d-flex flex-column align-center pt-10";
+            return "d-flex flex-column align-center";
         },
     }
 });
@@ -147,6 +159,7 @@ export default Vue.extend({
     height: 100%;;
 }
 
+/* Name */
 #myName {
     font-size: 4rem !important;
     font-weight: 200;
@@ -155,10 +168,27 @@ export default Vue.extend({
     text-transform: uppercase;
 }
 
-#logoBackground {
-    height: 12vh;
+/**
+*   Logos
+*/
+.logo {
     position: absolute;
     top: 1rem;
+}
+
+.logoDesktop {
+    height: 12vh;
     right: 5.5rem;
+}
+
+.logoTablet {
+    height: 10vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.logoMobile {
+    height: 5vh;
+    left: 2rem;
 }
 </style>

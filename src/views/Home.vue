@@ -5,80 +5,102 @@
             class="full-height-vh white--text"
             src="@/assets/background.jpg"
         >
-            <!-- Avatar, social media & name -->
-            <v-container fluid>
-                <v-row
-                    :no-gutters="mobile"
-                    :class="`${!mobile ? 'full-height-vh' : ''}`"
-                    align="center"
-                    justify="center"
+            <div v-if="!loading">
+                <!-- Logo -->
+                <transition
+                    appear
+                    appear-active-class="flipInX"
                 >
-                    <v-col cols="12" md="5" lg="4">
-                        <transition
-                            appear
-                            appear-active-class="bounce-enter-active"
-                        >
+                    <img id="logoBackground" src="@/assets/dm.svg">
+                </transition>
+
+                <!-- Avatar, social media & name -->
+                <v-container fluid>
+                    <v-row
+                        :no-gutters="mobile"
+                        :class="`${!mobile ? 'full-height-vh' : ''}`"
+                        align="center"
+                        justify="center"
+                    >
+                        <v-col cols="12" md="5" lg="4">
+                            
                             <div :class="classAvatar">
                                 <!-- Avatar -->
-                                <v-avatar
-                                    :size="!mobile ? '250px' : '170px'"
-                                    class="elevation-1 pa-2"
+                                <transition
+                                    appear
+                                    appear-active-class="flipInY"
                                 >
-                                    <img src="@/assets/me.jpg" alt="Daniel Molina" />
-                                </v-avatar>
-
-                                <!-- Social Media -->
-                                <div :class="`pa-2 ${!mobile ? 'ml-5' : ''}`">
-                                    <div
-                                        :class="`full-height-percentage d-flex ${mobile ? 'flex-row' : 'flex-column'} justify-center`"
+                                    <v-avatar
+                                        :size="!mobile ? '250px' : '170px'"
+                                        class="elevation-1 pa-2"
                                     >
-                                        <!-- Linked In -->
-                                        <v-btn
-                                            fab
-                                            small
-                                            dark
-                                            class="pa-2 ma-2"
-                                            color="blue darken-4"
-                                            href="https://www.linkedin.com/in/daniel-molina-469668194/"
-                                            target="_blank"
+                                        <img src="@/assets/me.jpg" alt="Daniel Molina" />
+                                    </v-avatar>
+                                </transition>
+                                <!-- Social Media -->
+                                <transition
+                                    appear
+                                    appear-active-class="flipInY"
+                                >
+                                    <div :class="`pa-2 ${!mobile ? 'ml-5' : ''}`">
+                                        <div
+                                            :class="`full-height-percentage d-flex ${mobile ? 'flex-row' : 'flex-column'} justify-center`"
                                         >
-                                            <v-icon>mdi-linkedin</v-icon>
-                                        </v-btn>
-                                        <!-- GitHub -->
-                                        <v-btn
-                                            fab
-                                            small
-                                            dark
-                                            class="pa-2 ma-2"
-                                            color="blue-grey darken-4"
-                                            href="https://github.com/danielmnv"
-                                            target="_blank"
-                                        >
-                                            <v-icon>mdi-github</v-icon>
-                                        </v-btn>
-                                        <!-- Gmail -->
-                                        <v-btn
-                                            fab
-                                            small
-                                            dark
-                                            class="pa-2 ma-2"
-                                            color="red"
-                                            href="mailto:danmnvx@gmail.com"
-                                            target="_blank"
-                                        >
-                                            <v-icon>mdi-gmail</v-icon>
-                                        </v-btn>
+                                            <!-- Linked In -->
+                                            <v-btn
+                                                fab
+                                                small
+                                                dark
+                                                class="pa-2 ma-2"
+                                                color="blue darken-4"
+                                                href="https://www.linkedin.com/in/daniel-molina-469668194/"
+                                                target="_blank"
+                                            >
+                                                <v-icon>mdi-linkedin</v-icon>
+                                            </v-btn>
+                                            <!-- GitHub -->
+                                            <v-btn
+                                                fab
+                                                small
+                                                dark
+                                                class="pa-2 ma-2"
+                                                color="blue-grey darken-4"
+                                                href="https://github.com/danielmnv"
+                                                target="_blank"
+                                            >
+                                                <v-icon>mdi-github</v-icon>
+                                            </v-btn>
+                                            <!-- Gmail -->
+                                            <v-btn
+                                                fab
+                                                small
+                                                dark
+                                                class="pa-2 ma-2"
+                                                color="red"
+                                                href="mailto:danmnvx@gmail.com"
+                                                target="_blank"
+                                            >
+                                                <v-icon>mdi-gmail</v-icon>
+                                            </v-btn>
+                                        </div>
                                     </div>
-                                </div>
+                                </transition>
                             </div>
-                        </transition>
-                    </v-col>
+                        </v-col>
 
-                    <v-col cols="12" md="7" lg="8">
-                        <p id="myName">Daniel Molina</p>
-                    </v-col>
-                </v-row>
-            </v-container>
+                        <!-- Name -->
+                        <v-col cols="12" md="7" offset-md="1">
+                            <transition
+                                appear
+                                appear-active-class="bounceInRight"
+                            >
+                                <p id="myName">Daniel Molina</p>
+                            </transition>
+                        </v-col>
+                    </v-row>
+                </v-container>
+
+            </div>
         </v-img>
     </div>
 </template>
@@ -88,8 +110,14 @@ import Vue from "vue";
 
 export default Vue.extend({
     data: () => ({
-        // 
+        loading: true
     }),
+
+    mounted() {
+        setTimeout(() => {
+            this.loading = false;
+        }, 500);
+    },
 
     computed: {
         // Is mobile or not
@@ -104,7 +132,6 @@ export default Vue.extend({
             
             return "d-flex flex-column align-center pt-10";
         },
-        }
     }
 });
 </script>
@@ -126,5 +153,12 @@ export default Vue.extend({
     line-height: 5rem;
     letter-spacing: 0.1666666667em;
     text-transform: uppercase;
+}
+
+#logoBackground {
+    height: 12vh;
+    position: absolute;
+    top: 1rem;
+    right: 5.5rem;
 }
 </style>

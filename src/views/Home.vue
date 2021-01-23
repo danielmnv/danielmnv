@@ -20,6 +20,7 @@
                 <!-- Avatar, social media & name -->
                 <v-container fluid>
                     <v-row
+                        dense
                         class="full-height-vh"
                         align="center"
                         justify="center"
@@ -99,7 +100,27 @@
                                 <p id="myName" class="text-center">Daniel Molina</p>
                             </transition>
                         </v-col>
+
+                        <!-- Coming soon mobile -->
+                        <v-col v-if="mobile" cols="12">
+                            <transition
+                                appear
+                                appear-active-class="fadeInUpBig"
+                            >
+                                <p class=" text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
+                            </transition>
+                        </v-col>
                     </v-row>
+
+                    <!-- Coming soon desktop -->
+                    <transition
+                        appear
+                        appear-active-class="fadeInUpBig"
+                    >
+                        <div>
+                            <p v-if="!mobile" id="coming" class="text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
+                        </div>
+                    </transition>
                 </v-container>
 
             </div>
@@ -166,6 +187,14 @@ export default Vue.extend({
     line-height: 5rem;
     letter-spacing: 0.1666666667em;
     text-transform: uppercase;
+}
+
+/* Coming soon (temporal) */
+#coming {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 /**

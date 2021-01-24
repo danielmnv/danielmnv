@@ -135,10 +135,7 @@ export default Vue.extend({
     name: 'Home',
 
     metaInfo: {
-        title: 'Daniel Molina\'s resume',
-        meta: [
-            { name: 'description', content: 'Website to show my resume to anyone who has been interested in me' },
-        ]
+        title: 'Resume | DM',
     },
 
     data: () => ({

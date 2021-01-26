@@ -1,6 +1,8 @@
 <template>
     <v-app>
+		<!-- Desktop drawer -->
         <v-navigation-drawer
+			v-if="!mobile"
             v-model="drawer"
 			color="background"
             mini-variant
@@ -18,11 +20,7 @@
 							></v-img>
 						</v-list-item-avatar>
 
-						<v-list-item-title>John Leider</v-list-item-title>
-
-						<v-btn icon>
-							<v-icon>mdi-chevron-left</v-icon>
-						</v-btn>
+						<v-list-item-title>Daniel Molina</v-list-item-title>
 					</v-list-item>
 				</v-list>
 
@@ -59,7 +57,7 @@
                         </v-list-item-icon>
 
 						<v-list-item-content>
-							<v-list-item-title>Tema</v-list-item-title>
+							<v-list-item-title>Theme</v-list-item-title>
 						</v-list-item-content>
 					</v-list-item>
 				</v-list>
@@ -70,6 +68,29 @@
 		<v-main>
 			<router-view></router-view>
 		</v-main>
+	
+		<!-- Mobile bottom navigation -->
+		<v-bottom-navigation
+			v-if="mobile"
+			background-color="background"
+			color="primary"
+			app
+			shift
+			grow
+		>
+			<!-- Item -->
+			<v-btn
+				color="background"
+				style="height: 100%;"
+				v-for="route in routes"
+				:key="route.title"
+				:value="route.title"
+				:to="route.to"
+			>
+				<span>{{ route.title }}</span>
+				<v-icon>{{ route.icon }}</v-icon>
+			</v-btn>
+		</v-bottom-navigation>
     </v-app>
 </template>
 
@@ -86,6 +107,11 @@ export default class App extends Vue {
 		{ title: 'Experience', icon: 'mdi-briefcase-outline', to: '/experience' },
 		{ title: 'Contact', icon: 'mdi-email-variant', to: '/contact' }
 	];
+
+	// Is mobile or not
+    get mobile(): boolean {
+        return this.$vuetify.breakpoint.smAndDown;
+	}
 
 	toggleTheme(): void {
 		this.$vuetify.theme.dark = !this.$vuetify.theme.dark;

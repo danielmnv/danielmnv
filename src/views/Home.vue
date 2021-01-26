@@ -129,50 +129,48 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { MetaInfo } from "vue-meta";
+import { Component, Vue } from "vue-property-decorator";
 
-export default Vue.extend({
-    name: 'Home',
-
-    metaInfo: {
-        title: 'Resume | DM',
-    },
-
-    data: () => ({
-        loading: true
-    }),
+@Component ({
+    metaInfo(): MetaInfo {
+        return {
+            title: 'Resume | DM'
+        }
+    }
+})
+export default class Home extends Vue {
+    loading = true;
 
     mounted() {
         setTimeout(() => {
             this.loading = false;
         }, 500);
-    },
-
-    computed: {
-        // Is mobile or not
-        mobile() {
-            return this.$vuetify.breakpoint.smAndDown;
-        },
-
-        // Class for logo
-        logoClass() {
-            if (this.$vuetify.breakpoint.lgAndUp)
-                return 'logoDesktop';
-            else if (this.$vuetify.breakpoint.mdOnly)
-                return 'logoTablet';
-            
-            return 'logoMobile';
-        },
-
-        // Class for avatar space
-        avatarClass() {
-            if (!this.mobile)
-                return "d-flex justify-end"
-            
-            return "d-flex flex-column align-center";
-        },
     }
-});
+
+    // Is mobile or not
+    get mobile(): boolean {
+        return this.$vuetify.breakpoint.smAndDown;
+    }
+
+    // Class for logo
+    get logoClass(): string{
+        if (this.$vuetify.breakpoint.lgAndUp)
+            return 'logoDesktop';
+        else if (this.$vuetify.breakpoint.mdOnly)
+            return 'logoTablet';
+        
+        return 'logoMobile';
+    }
+
+    // Class for avatar space
+    get avatarClass(): string {
+        if (!this.mobile)
+            return "d-flex justify-end"
+        
+        return "d-flex flex-column align-center";
+    }
+}
 </script>
 
 <style scoped>

@@ -9,7 +9,7 @@
                 <!-- Logo -->
                 <transition
                     appear
-                    :appear-active-class="mobile? 'bounceInLeft' : 'flipInX'"
+                    :appear-active-class="`animate__animated animate__${mobile? 'bounceInLeft' : 'flipInX'}`"
                 >
                     <div>
                         <img :class="`logo ${logoClass}`" src="@/assets/dm.svg">
@@ -31,7 +31,7 @@
                                 <!-- Avatar -->
                                 <transition
                                     appear
-                                    :appear-active-class="mobile? 'zoomIn' : 'flipInY'"
+                                    :appear-active-class="`animate__animated animate__${mobile? 'zoomIn' : 'flipInY'}`"
                                 >
                                     <v-avatar
                                         :size="!mobile ? '250px' : '170px'"
@@ -43,7 +43,7 @@
                                 <!-- Social Media -->
                                 <transition
                                     appear
-                                    :appear-active-class="mobile? 'flipInX' : 'flipInY'"
+                                    :appear-active-class="`animate__animated animate__${mobile? 'flipInX' : 'flipInY'}`"
                                 >
                                     <div :class="`pa-2 ${!mobile ? 'ml-5' : ''}`">
                                         <div
@@ -95,7 +95,7 @@
                         <v-col cols="12" md="7" lg="8">
                             <transition
                                 appear
-                                :appear-active-class="mobile? 'bounceInUp' : 'bounceInRight'"
+                                :appear-active-class="`animate__animated animate__${mobile? 'bounceInUp' : 'bounceInRight'}`"
                             >
                                 <p id="myName" class="text-center">Daniel Molina</p>
                             </transition>
@@ -105,7 +105,7 @@
                         <v-col v-if="mobile" cols="12">
                             <transition
                                 appear
-                                appear-active-class="fadeInUpBig"
+                                appear-active-class="animate__animated animate__fadeInUpBig"
                             >
                                 <p class=" text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
                             </transition>
@@ -115,7 +115,7 @@
                     <!-- Coming soon desktop -->
                     <transition
                         appear
-                        appear-active-class="fadeInUpBig"
+                        appear-active-class="animate__animated animate__fadeInUpBig"
                     >
                         <div>
                             <p v-if="!mobile" id="coming" class="text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
@@ -145,7 +145,7 @@ export default class Home extends Vue {
     mounted() {
         setTimeout(() => {
             this.loading = false;
-        }, 500);
+        }, 600);
     }
 
     // Is mobile or not

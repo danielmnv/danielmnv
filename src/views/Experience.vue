@@ -13,169 +13,77 @@
                     </v-avatar>
                 </template>
 
-                <p class="headline">Lion Systems Solutions <span class="yellow--text text--darken-4 font-weight-bold">2019 - Today</span></p>
+                <p class="headline">Lion Systems Solutions <span class="brown--text text--lighten-1 font-weight-bold">2019 - Today</span></p>
 
-                <v-container>
+                <v-container fluid>
                     <v-row>
-                        <!-- Dashboard -->
-                        <v-col cols="12" sm="6" md="4">
-                            <v-card class="mt-5 elevation-2">
-                                <v-card-title>Dashboard</v-card-title>
-
-                                <v-card-text>
-                                    <p>Desarrollo de interfaces alimentadas con API's procedentes de un concentrador de datos</p>
-                                </v-card-text>
-
-                                <!-- Languages / Frameworks -->
-                                <v-container>
-                                    <v-row>
-                                        <v-chip small outlined class="ma-1" color="red">
-                                            <v-icon dark left>mdi-laravel</v-icon>
-                                            Laravel
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="brown lighten-2">
-                                            <v-icon dark left>mdi-api</v-icon>
-                                            API
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="yellow darken-2">
-                                            <v-icon dark left>mdi-language-python</v-icon>
-                                            Python
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="green darken-1">
-                                            <v-icon dark left>mdi-vuejs</v-icon>
-                                            Vue
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="blue darken-1">
-                                            <v-icon dark left>mdi-vuetify</v-icon>
-                                            Vuetify
-                                        </v-chip>
-                                    </v-row>
-                                </v-container>
-                            </v-card>
-                        </v-col>
-
-                        <!-- Prestashop -->
-                        <v-col cols="12" sm="6" md="4">
-                            <v-card class="mt-5 elevation-2">
-                                <v-card-title>Store Online</v-card-title>
-
-                                <v-card-text>
-                                    <p>Desarrollo de tiendas online con Prestashop implementando contenedores Docker</p>
-                                </v-card-text>
-
-                                <!-- Languages / Frameworks -->
-                                <v-container>
-                                    <v-row>
-                                        <v-chip small outlined class="ma-1" color="pink">
-                                            <v-avatar left>
-                                                <img src="@/assets/tools/prestashop.png">
-                                            </v-avatar>
-                                            Prestashop
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="cyan">
-                                            <v-icon dark left>mdi-docker</v-icon>
-                                            Docker
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="orange darken-3">
-                                            <v-icon dark left>mdi-gitlab</v-icon>
-                                            DevOps
-                                        </v-chip>
-                                    </v-row>
-                                </v-container>
-                            </v-card>
-                        </v-col>
-
-                        <!-- ERP & CRM -->
-                        <v-col cols="12" sm="6" md="4">
+                        <!-- Project -->
+                        <v-col v-for="(project, index) in lssProjects" :key="index" cols="12" sm="6" md="4">
                             <v-hover v-slot="{ hover }">
-                                <v-card elevation="2">
-                                    <v-card-title>ERP's & CRM's Systems</v-card-title>
+                                <v-card class="elevation-2">
+                                    <v-card-title>{{ project.name }}</v-card-title>
+
                                     <v-card-text>
-                                        <p>Levantamiento y desarrollo de de sistemas web ERP's & CRM's implementados con PHP.</p>
-                                        <p>Desarrollo de módulos para dichos sistemas, tales como un módulo de firma digital para los documentos generados (facturas, cotizaciones, expediciones, etc.)</p>
+                                        <p v-for="(paragraph, index) in project.text" :key="index">{{ paragraph }}</p>
                                     </v-card-text>
-                                    
+
                                     <!-- Languages / Frameworks -->
-                                    <v-expand-transition>
-                                        <div
-                                            v-if="hover"
-                                            class="transition-fast-in-fast-out v-card--reveal"
-                                        >
-                                            <v-container>
-                                                <v-row>
-                                                    <v-chip small outlined class="ma-1" color="indigo">
-                                                        <v-icon dark left>mdi-language-php</v-icon>
-                                                        PHP
-                                                    </v-chip>
+                                    <template v-if="!mobile">
+                                        <v-scroll-y-transition origin="top center 0">
+                                            <v-overlay
+                                                v-if="hover"
+                                                absolute
+                                                :opacity="isThemeDark? 0.9 : 0.6"
+                                            >
+                                                <v-container>
+                                                    <v-list dense color="transparent">
+                                                        <v-list-item
+                                                            v-for="tool in project.tools"
+                                                            :key="tool.name"
 
-                                                    <v-chip small outlined class="ma-1" color="yellow darken-3">
-                                                        <v-icon dark left>mdi-language-javascript</v-icon>
-                                                        Javascript
-                                                    </v-chip>
+                                                        >
+                                                            <v-list-item-avatar :color="tool.color" size="35">
+                                                                <template v-if="tool.name == 'Prestashop'">
+                                                                    <img :src="require('@/assets/' + tool.avatar)" :alt="tool.name">
+                                                                </template>
+                                                                <template v-else>
+                                                                    <v-icon v-text="tool.icon"></v-icon>
+                                                                </template>
+                                                            </v-list-item-avatar>
+                                                            <v-list-item-content>
+                                                                <v-list-item-title v-text="tool.name"></v-list-item-title>
+                                                            </v-list-item-content>
+                                                        </v-list-item>
+                                                    </v-list>
+                                                </v-container>
+                                            </v-overlay>
+                                        </v-scroll-y-transition>
+                                    </template>
 
-                                                    <v-chip small outlined class="ma-1" color="white">
-                                                        <v-icon dark left>mdi-database</v-icon>
-                                                        SQL
-                                                    </v-chip>
-
-                                                    <v-chip small outlined class="ma-1" color="pink darken-2s">
-                                                        <v-icon dark left>mdi-slack</v-icon>
-                                                        Slack
-                                                    </v-chip>
-                                                </v-row>
-                                            </v-container>
+                                    <template v-else>
+                                        <div class="d-flex">
+                                            <v-chip
+                                                v-for="(tool, index) in project.tools"
+                                                :key="index"
+                                                :color="tool.color"
+                                                class="ma-1"
+                                                small
+                                                outlined
+                                            >
+                                                <template v-if="tool.name == 'Prestashop'">
+                                                    <v-avatar left>
+                                                        <img :src="require('@/assets/' + tool.avatar)" :alt="tool.name">
+                                                    </v-avatar>
+                                                </template>
+                                                <template v-else>
+                                                    <v-icon dark left>{{ tool.icon }}</v-icon>
+                                                </template>
+                                                {{ tool.name }}
+                                            </v-chip>
                                         </div>
-                                    </v-expand-transition>
+                                    </template>
                                 </v-card>
-
                             </v-hover>
-                        </v-col>
-
-                        <!-- Web site -->
-                        <v-col cols="12" sm="6" md="4">
-                            <v-card class="mt-5 elevation-2">
-                                <v-card-title>Company web site</v-card-title>
-
-                                <v-card-text>
-                                    <p>Pagina web de la empresa</p>
-                                </v-card-text>
-
-                                <!-- Languages / Frameworks -->
-                                <v-container>
-                                    <v-row>
-                                        <v-chip small outlined class="ma-1" color="orange">
-                                            <v-icon dark left>mdi-language-html5</v-icon>
-                                            HTML
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="blue lighten-1">
-                                            <v-icon dark left>mdi-language-css3</v-icon>
-                                            CSS
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="indigo lighten-1">
-                                            <v-icon dark left>mdi-jquery</v-icon>
-                                            JQuery
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="deep-purple darken-1">
-                                            <v-icon dark left>mdi-bootstrap</v-icon>
-                                            Bootstrap
-                                        </v-chip>
-
-                                        <v-chip small outlined class="ma-1" color="pink darken-2">
-                                            <v-icon dark left>mdi-alpha-a-box</v-icon>
-                                            AFrame
-                                        </v-chip>
-                                    </v-row>
-                                </v-container>
-                            </v-card>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -221,10 +129,73 @@ import { Component, Vue } from "vue-property-decorator";
     }
 })
 export default class Experience extends Vue {
+    lssProjects = [
+        {
+            name: 'Dashboard',
+            text: [
+                "Desarrollo de interfaces alimentadas con API's procedentes de un concentrador de datos",
+                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quidem ipsa tempora magni at eos iste repellendus quibusdam enim dolor eius ipsum, ut eveniet dolores sed facere reiciendis ullam! Magni?"
+            ],
+            tools: [
+                { name: 'Laravel', icon: 'mdi-laravel', color: 'red' },
+                { name: 'Vue', icon: 'mdi-vuejs', color: 'green darken-1' },
+                { name: 'Vuetify', icon: 'mdi-vuetify', color: 'blue darken-1' },
+                { name: 'Python', icon: 'mdi-language-python', color: 'yellow darken-2' },
+                { name: 'API Development', icon: 'mdi-api', color: 'brown lighten-2' },
+            ]
+        },
+
+        {
+            name: 'Store Online',
+            text: [
+                "Desarrollo de tiendas online con Prestashop implementando contenedores Docker",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eius sunt itaque culpa. Architecto hic quae ab laboriosam eaque, adipisci soluta nam quasi nesciunt illum quia sequi doloremque autem ex!"
+            ],
+            tools: [
+                { name: 'Prestashop', avatar: 'tools/prestashop.png', color: 'pink' },
+                { name: 'Docker', icon: 'mdi-docker', color: 'cyan' },
+                { name: 'GitLab DevOps ', icon: 'mdi-gitlab', color: 'orange darken-3' },
+                { name: 'PHP', icon: 'mdi-language-php', color: 'indigo' },
+            ]
+        },
+
+        {
+            name: "ERP's & CRM's Systems",
+            text: [
+                "Levantamiento y desarrollo de de sistemas web ERP's & CRM's implementados con PHP.",
+                "Desarrollo de módulos para dichos sistemas, tales como un módulo de firma digital para los documentos generados (facturas, cotizaciones, expediciones, etc.)"
+            ],
+            tools: [
+                { name: 'Javascript', icon: 'mdi-language-javascript', color: 'yellow darken-3' },
+                { name: 'SQL', icon: 'mdi-database', color: 'blue lighten-3' },
+                { name: 'Slack', icon: 'mdi-slack', color: 'pink darken-2' }
+            ]
+        },
+
+        {
+            name: "Company web site",
+            text: [
+                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam tempora distinctio vero nostrum, eum commodi molestias cupiditate omnis sit veritatis alias dolorum incidunt at enim ipsam cumque consectetur, dolor laborum!",
+                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, amet rem? Molestiae distinctio autem facere optio repellendus eveniet dolorem tempora quaerat sunt magnam nesciunt exercitationem ad, possimus eligendi quam aperiam?"
+            ],
+            tools: [
+                { name: 'HTML 5', icon: 'mdi-language-html5', color: 'orange' },
+                { name: 'CSS', icon: 'mdi-language-css3', color: 'blue lighten-1' },
+                { name: 'JQuery', icon: 'mdi-jquery', color: 'indigo lighten-1' },
+                { name: 'Bootstrap', icon: 'mdi-bootstrap', color: 'deep-purple darken-1' },
+                { name: 'AFrame', icon: 'mdi-alpha-a-box', color: 'pink darken-2' }
+            ],
+        }
+    ];
+
     // Is mobile or not
     get mobile(): boolean {
         return this.$vuetify.breakpoint.smAndDown;
     }
+
+    get isThemeDark(): boolean {
+		return this.$vuetify.theme.dark;
+	}
 }
 </script>
 
@@ -233,18 +204,4 @@ export default class Experience extends Vue {
     filter: invert(48%) sepia(80%) saturate(381%) hue-rotate(4deg) brightness(92%) contrast(88%);
 }
 
-.cardProjectHover {
-    opacity: 0.4;
-} 
-
-.languages-frameworks {
-    position: absolute;
-    opacity: 1;
-    top: 0;
-    display: none;
-}
-
-.showDetails {
-    display: block;
-}
 </style>

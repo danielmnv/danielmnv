@@ -4,7 +4,7 @@
         <app-drawer v-if="!mobile" :routes="routes"></app-drawer>
 
 		<v-main>
-			<transition enter-active-class="animate__animated animate__fadeInRight">
+			<transition :enter-active-class="`animate__animated animate__${mobile ? 'slideInUp' : 'fadeInRight'}`">
 				<router-view></router-view>
 			</transition>
 		</v-main>

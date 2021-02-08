@@ -1,7 +1,7 @@
 <template>
     <v-app>
-		<!-- Desktop drawer -->
-        <app-drawer v-if="!mobile" :routes="routes"></app-drawer>
+		<!-- App drawer -->
+        <app-drawer :routes="routes"></app-drawer>
 
 		<v-main>
 			<transition :enter-active-class="`animate__animated animate__${mobile ? 'slideInUp' : 'fadeInRight'}`">

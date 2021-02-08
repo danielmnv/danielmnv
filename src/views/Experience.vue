@@ -16,9 +16,9 @@
                 <p class="headline">Lion Systems Solutions <span class="brown--text text--lighten-1 font-weight-bold">2019 - Today</span></p>
 
                 <v-container fluid>
-                    <v-row>
+                    <v-row justify="center">
                         <!-- Project -->
-                        <v-col v-for="(project, index) in lssProjects" :key="index" cols="12" sm="6" md="4">
+                        <v-col v-for="(project, index) in lssProjects" :key="index" cols="12" sm="6" md="6" lg="4">
                             <v-hover v-slot="{ hover }">
                                 <v-card class="elevation-2">
                                     <v-card-title>{{ project.name }}</v-card-title>
@@ -61,7 +61,7 @@
                                     </template>
 
                                     <template v-else>
-                                        <div class="d-flex">
+                                        <div class="d-flex flex-wrap justify-center pb-3">
                                             <v-chip
                                                 v-for="(tool, index) in project.tools"
                                                 :key="index"

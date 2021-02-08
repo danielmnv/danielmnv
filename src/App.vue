@@ -4,7 +4,9 @@
         <app-drawer :routes="routes"></app-drawer>
 
 		<v-main>
-			<router-view></router-view>
+			<transition enter-active-class="animate__animated animate__fadeInRight">
+				<router-view></router-view>
+			</transition>
 		</v-main>
 	
 		<!-- Mobile bottom navigation -->

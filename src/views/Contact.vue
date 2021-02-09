@@ -142,7 +142,7 @@ export default class Contact extends Vue {
     ];
 
     // Current theme
-    get activeTheme(): Array<any> {
+    get activeTheme(): Array<{}> {
 		return (this.$vuetify.theme.dark) ? [...this.darkStyle, ...this.defaultStyle] : [...this.lightStyle, ...this.defaultStyle];
 	}
 }

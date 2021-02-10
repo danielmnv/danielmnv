@@ -12,9 +12,8 @@
             <gmap-marker
                 :position="center"
                 :icon="{ 
-                    url: require('@/assets/dm.svg'),
-                    scaledSize: {width: 42, height: 42},
-                    iconOrigin: {x: 96, y: -100}
+                    url: require('@/assets/marker.svg'),
+                    scaledSize: {width: 55, height: 55}
                 }"
             ></gmap-marker>
         </gmap-map>

@@ -2,13 +2,21 @@
     <div>
         <gmap-map
             :center="center"
-            :zoom="4"
+            :zoom="5"
             :options="{
                 disableDefaultUI: true,
                 styles: activeTheme
             }"
             style="width:100%;  height: 100vh;"
         >
+            <gmap-marker
+                :position="center"
+                :icon="{ 
+                    url: require('@/assets/dm.svg'),
+                    scaledSize: {width: 42, height: 42},
+                    iconOrigin: {x: 96, y: -100}
+                }"
+            ></gmap-marker>
         </gmap-map>
     </div>
 </template>

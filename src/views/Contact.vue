@@ -19,7 +19,7 @@
         </gmap-map>
 
         <v-container :class="{ 'infoCard' : !mobile }" fluid>
-            <v-card width="500px" flat outlined>
+            <v-card :width="mobile? '500px' : '350px'" flat outlined :class="{ 'mx-auto' : mobile }">
                 <v-card-title class="d-flex ml-3">
                     <v-avatar class="pa-2" size="25">
                         <img src="@/assets/mexico.png" alt="Mexico">

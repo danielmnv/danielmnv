@@ -82,7 +82,7 @@ import anime from "animejs/lib/anime.es";
     }
 })
 export default class Skills extends Vue {
-    activeTab = 3;
+    activeTab = 0;
 
     skills = {
         languages: [
@@ -133,7 +133,7 @@ export default class Skills extends Vue {
     }
 
     mounted() {
-        this.animateOthers();
+        this.animateLangs();
     }
 
     animateLangs(): void {

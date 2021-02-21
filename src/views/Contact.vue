@@ -18,8 +18,9 @@
             ></gmap-marker>
         </gmap-map>
 
-        <v-container :class="{ 'infoCard' : !mobile }" fluid>
-            <v-card :width="mobile? '500px' : '350px'" flat outlined :class="{ 'mx-auto' : mobile }">
+        <!-- <v-container :class="{ 'infoCard' : !mobile }" fluid style="background-color: red"> -->
+            <!-- { 'mx-auto' : mobile } -->
+            <v-card :width="mobile? '500px' : '350px'" flat :class="mobile ? 'mx-auto ma-3' : 'infoCard'">
                 <v-card-title class="d-flex ml-3">
                     <v-avatar class="pa-2" size="25">
                         <img src="@/assets/mexico.png" alt="Mexico">
@@ -102,7 +103,7 @@
                     </v-row>
                 </v-card-text>
             </v-card>
-        </v-container>
+        <!-- </v-container> -->
     </div>
 </template>
 
@@ -250,6 +251,6 @@ export default class Contact extends Vue {
 .infoCard {
     position: absolute;
     left: 5rem;
-    bottom: 0;
+    bottom: 0.4rem;
 }
 </style>

@@ -9,17 +9,22 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import ('../views/Home.vue')
+    component: () => import (/* webpackChunkName: "home" */ '../views/Home.vue')
+  },
+  {
+    path: '/skills',
+    name: 'Skills',
+    component: () => import (/* webpackChunkName: "skills" */ '../views/Skills.vue')
   },
   {
     path: '/experience',
     name: 'Experience',
-    component: () => import ('../views/Experience.vue')
+    component: () => import (/* webpackChunkName: "experience" */ '../views/Experience.vue')
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import ('../views/Contact.vue')
+    component: () => import (/* webpackChunkName: "contact" */ '../views/Contact.vue')
   }
 ]
 

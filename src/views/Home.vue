@@ -1,130 +1,30 @@
 <template>
+    <!-- Avatar, social media & name -->
     <div>
-        <!-- Full background -->
-        <v-img
-            class="full-height-vh white--text"
-            src="@/assets/background.jpg"
-        >
-            <div v-if="!loading">
-                <!-- Logo -->
-                <transition
-                    appear
-                    :appear-active-class="`animate__animated animate__${mobile? 'bounceInLeft' : 'flipInX'}`"
-                >
-                    <div>
-                        <img :class="`logo ${logoClass}`" src="@/assets/dm.svg">
+        <v-container class="d-flex flex-column align-center justify-space-around" :style="fullHeight">
+            <v-avatar size="150px" class="elevation-5 pa-2">
+                <img src="@/assets/me.jpg" alt="Daniel Molina" />
+            </v-avatar>
+            <h6 class="text-h3 text-center">
+                Full-stack Developer
+            </h6>
+            <p class="text-subtitle-1 mt-5 text-center">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. In velit quasi est nihil!
+            </p>
+        </v-container>
 
-                    </div>
-                </transition>
+        <section :class="welcomeClass" :style="colorDivider">
+            <v-container class="text-center">
+                <h6 class="text-h4 font-weight-black">Hi, I'm Daniel Molina!</h6>
+                <p class="text-subtitle-1 mt-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, perspiciatis necessitatibus mollitia iste nisi consequuntur iusto tenetur molestiae nesciunt fuga molestias laudantium atque illum eum expedita! Corporis nobis esse id!
+                </p>
+            </v-container>
+        </section>
 
-                <!-- Avatar, social media & name -->
-                <v-container fluid>
-                    <v-row
-                        dense
-                        class="full-height-vh"
-                        align="center"
-                        justify="center"
-                    >
-                        <v-col cols="12" md="5" lg="4">
-                            
-                            <div :class="avatarClass">
-                                <!-- Avatar -->
-                                <transition
-                                    appear
-                                    :appear-active-class="`animate__animated animate__${mobile? 'zoomIn' : 'flipInY'}`"
-                                >
-                                    <v-avatar
-                                        :size="!mobile ? '250px' : '170px'"
-                                        class="elevation-1 pa-2"
-                                    >
-                                        <img src="@/assets/me.jpg" alt="Daniel Molina" />
-                                    </v-avatar>
-                                </transition>
-                                <!-- Social Media -->
-                                <transition
-                                    appear
-                                    :appear-active-class="`animate__animated animate__${mobile? 'flipInX' : 'flipInY'}`"
-                                >
-                                    <div :class="`pa-2 ${!mobile ? 'ml-5' : ''}`">
-                                        <div
-                                            :class="`full-height-percentage d-flex ${mobile ? 'flex-row' : 'flex-column'} justify-center`"
-                                        >
-                                            <!-- Linked In -->
-                                            <v-btn
-                                                fab
-                                                small
-                                                dark
-                                                class="pa-2 ma-2"
-                                                color="blue darken-4"
-                                                href="https://www.linkedin.com/in/daniel-molina-469668194/"
-                                                target="_blank"
-                                            >
-                                                <v-icon>mdi-linkedin</v-icon>
-                                            </v-btn>
-                                            <!-- GitHub -->
-                                            <v-btn
-                                                fab
-                                                small
-                                                dark
-                                                class="pa-2 ma-2"
-                                                color="blue-grey darken-4"
-                                                href="https://github.com/danielmnv"
-                                                target="_blank"
-                                            >
-                                                <v-icon>mdi-github</v-icon>
-                                            </v-btn>
-                                            <!-- Gmail -->
-                                            <v-btn
-                                                fab
-                                                small
-                                                dark
-                                                class="pa-2 ma-2"
-                                                color="red"
-                                                href="mailto:danmnvx@gmail.com"
-                                                target="_blank"
-                                            >
-                                                <v-icon>mdi-gmail</v-icon>
-                                            </v-btn>
-                                        </div>
-                                    </div>
-                                </transition>
-                            </div>
-                        </v-col>
-
-                        <!-- Name -->
-                        <v-col cols="12" md="7" lg="8">
-                            <transition
-                                appear
-                                :appear-active-class="`animate__animated animate__${mobile? 'bounceInUp' : 'bounceInRight'}`"
-                            >
-                                <p id="myName" class="text-center">Daniel Molina</p>
-                            </transition>
-                        </v-col>
-
-                        <!-- Coming soon mobile -->
-                        <v-col v-if="mobile" cols="12">
-                            <transition
-                                appear
-                                appear-active-class="animate__animated animate__fadeInUpBig"
-                            >
-                                <p class=" text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
-                            </transition>
-                        </v-col>
-                    </v-row>
-
-                    <!-- Coming soon desktop -->
-                    <transition
-                        appear
-                        appear-active-class="animate__animated animate__fadeInUpBig"
-                    >
-                        <div>
-                            <p v-if="!mobile" id="coming" class="text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
-                        </div>
-                    </transition>
-                </v-container>
-
-            </div>
-        </v-img>
+        <v-container :style="resumeMargin">
+            <v-img src="@/assets/code.png" class="mx-auto" width="800px"></v-img>
+        </v-container>
     </div>
 </template>
 
@@ -132,12 +32,12 @@
 import { MetaInfo } from "vue-meta";
 import { Component, Vue } from "vue-property-decorator";
 
-@Component ({
+@Component({
     metaInfo(): MetaInfo {
         return {
-            title: 'Resume | DM'
-        }
-    }
+            title: "Resume | DM",
+        };
+    },
 })
 export default class Home extends Vue {
     loading = true;
@@ -153,22 +53,31 @@ export default class Home extends Vue {
         return this.$vuetify.breakpoint.smAndDown;
     }
 
-    // Class for logo
-    get logoClass(): string{
-        if (this.$vuetify.breakpoint.lgAndUp)
-            return 'logoDesktop';
-        else if (this.$vuetify.breakpoint.mdOnly)
-            return 'logoTablet';
+    get fullHeight(): string {
+        if (this.$vuetify.breakpoint.smAndDown)
+            return 'height: 90vh;'
         
-        return 'logoMobile';
+        return 'height: 100vh';
     }
 
-    // Class for avatar space
-    get avatarClass(): string {
-        if (!this.mobile)
-            return "d-flex justify-end"
+    get welcomeClass(): string {
+        if (this.$vuetify.breakpoint.lgAndUp)
+            return 'welcome-text-lg';
+        else if (this.$vuetify.breakpoint.mdOnly)
+            return 'welcome-text-md';
+        else
+            return 'welcome-text-sm';
+    }
+
+    get resumeMargin(): string {
+        if (this.$vuetify.breakpoint.smAndDown)
+            return 'margin-top: -8rem;'
         
-        return "d-flex flex-column align-center";
+        return 'margin-top: -14rem;';
+    }
+
+    get colorDivider(): string {
+        return `background-color: ${this.$vuetify.theme.currentTheme.accent};`;
     }
 }
 </script>
@@ -179,49 +88,25 @@ export default class Home extends Vue {
     height: 100vh;
 }
 
-/* Full parent height */
-.full-height-percentage {
-    height: 100%;;
+.welcome-text-lg {
+    padding: 9rem 1.5rem;
+    padding-bottom: 18rem;
+    width: 100%;
 }
 
-/* Name */
-#myName {
-    font-size: 4rem !important;
-    font-weight: 200;
-    line-height: 5rem;
-    letter-spacing: 0.1666666667em;
-    text-transform: uppercase;
+.welcome-text-md {
+    padding: 9rem 1.5rem;
+    padding-bottom: 16rem;
+    width: 100%;
 }
 
-/* Coming soon (temporal) */
-#coming {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translate(-50%, 0);
+.welcome-text-sm {
+    padding: 5rem 1.5rem;
+    padding-bottom: 9rem;
+    width: 100%;
 }
 
-/**
-*   Logos
-*/
-.logo {
-    position: absolute;
-    top: 1rem;
-}
-
-.logoDesktop {
-    height: 12vh;
-    right: 5.5rem;
-}
-
-.logoTablet {
-    height: 10vh;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.logoMobile {
-    height: 5vh;
-    left: 2rem;
+.resume-code {
+    margin-top: -14rem;
 }
 </style>

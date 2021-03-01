@@ -10,7 +10,8 @@ export default new Vuetify({
         themes: {
             dark: {
                 primary: colors.cyan.base,
-                background: colors.grey.darken4
+                accent: colors.deepPurple.darken1,
+                background: colors.grey.darken4,
             }
         }
     }

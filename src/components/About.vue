@@ -55,6 +55,17 @@ export default class About extends Vue {}
 </script>
 
 <style scoped>
+/* About in code */
+.about-in-code { 
+    font-weight: bold;
+    border-radius: 12px !important;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
 /* Window */
 .about-in-code div.circle {
     display: inline-block;
@@ -68,10 +79,6 @@ export default class About extends Vue {}
 .about-in-code div.minimize { background: #16cd37; }
 
 /* Snapshot */
-.about-in-code { 
-    font-weight: bold;
-    border-radius: 12px !important; 
-}
 .about-in-code pre {
     overflow: auto;
     white-space: pre;       /* Since CSS 2.1 */
@@ -79,11 +86,6 @@ export default class About extends Vue {}
     white-space: -pre;      /* Opera 4-6 */
     white-space: -o-pre;    /* Opera 7 */
     word-wrap: normal;       /* Internet Explorer 5.5+ */
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 /* Code stylish */

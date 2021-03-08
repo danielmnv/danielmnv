@@ -1,19 +1,20 @@
 <template>
-    <!-- Avatar, social media & name -->
     <div>
+        <!-- Init -->
         <v-container class="d-flex flex-column align-center justify-space-around" :style="fullHeight">
             <v-avatar size="150px" class="elevation-5 pa-2">
                 <img src="@/assets/me.jpg" alt="Daniel Molina" />
             </v-avatar>
             <h6 class="text-h3 text-center">
-                Full-stack Developer
+                Full-stack Web Developer
             </h6>
             <p class="text-subtitle-1 mt-5 text-center">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. In velit quasi est nihil!
             </p>
         </v-container>
 
-        <section :class="welcomeClass" :style="colorDivider">
+        <!-- Welcome -->
+        <section :class="dividerText" :style="dividerColor">
             <v-container class="text-center">
                 <h6 class="text-h4 font-weight-black">Hi, I'm Daniel Molina!</h6>
                 <p class="text-subtitle-1 mt-10">
@@ -22,8 +23,25 @@
             </v-container>
         </section>
 
-        <v-container :style="resumeMargin">
-            <v-img src="@/assets/code.png" class="mx-auto" width="800px"></v-img>
+        <!-- Skills & Knowledge-->
+        <v-container :style="dividerMargin">
+            <skills />
+            <knowledge />
+        </v-container>
+
+        <!-- About -->
+        <section :class="dividerText" :style="dividerColor">
+            <v-container class="text-center">
+                <h6 class="text-h4 font-weight-black">About Me</h6>
+                <p class="text-subtitle-1 mt-10">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus laudantium neque velit, debitis ab voluptatibus sint eveniet, dignissimos provident similique accusamus labore itaque quod accusantium adipisci! Animi voluptates modi minus!
+                </p>
+            </v-container>
+        </section>
+        
+        <!-- About in code -->
+        <v-container :style="dividerMargin">
+            <about />
         </v-container>
     </div>
 </template>
@@ -31,6 +49,9 @@
 <script lang="ts">
 import { MetaInfo } from "vue-meta";
 import { Component, Vue } from "vue-property-decorator";
+import Skills from "@/components/Skills.vue";
+import Knowledge from "@/components/Knowledge.vue";
+import About from "@/components/About.vue";
 
 @Component({
     metaInfo(): MetaInfo {
@@ -38,6 +59,12 @@ import { Component, Vue } from "vue-property-decorator";
             title: "Resume | DM",
         };
     },
+
+    components: {
+        Skills,
+        Knowledge,
+        About
+    }
 })
 export default class Home extends Vue {
     loading = true;
@@ -60,7 +87,7 @@ export default class Home extends Vue {
         return 'height: 100vh';
     }
 
-    get welcomeClass(): string {
+    get dividerText(): string {
         if (this.$vuetify.breakpoint.lgAndUp)
             return 'welcome-text-lg';
         else if (this.$vuetify.breakpoint.mdOnly)
@@ -69,25 +96,21 @@ export default class Home extends Vue {
             return 'welcome-text-sm';
     }
 
-    get resumeMargin(): string {
+    get dividerMargin(): string {
         if (this.$vuetify.breakpoint.smAndDown)
             return 'margin-top: -8rem;'
         
         return 'margin-top: -14rem;';
     }
 
-    get colorDivider(): string {
+    get dividerColor(): string {
         return `background-color: ${this.$vuetify.theme.currentTheme.accent};`;
     }
 }
 </script>
 
 <style scoped>
-/* Full viewport height */
-.full-height-vh {
-    height: 100vh;
-}
-
+/* Welcome text */
 .welcome-text-lg {
     padding: 9rem 1.5rem;
     padding-bottom: 18rem;
@@ -104,9 +127,5 @@ export default class Home extends Vue {
     padding: 5rem 1.5rem;
     padding-bottom: 9rem;
     width: 100%;
-}
-
-.resume-code {
-    margin-top: -14rem;
 }
 </style>

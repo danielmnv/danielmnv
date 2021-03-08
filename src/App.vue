@@ -28,8 +28,7 @@ import AppBottomNav from "@/components/app-bottom-nav.vue";
 export default class App extends Vue {
 	routes = [
 		{ title: 'Home', icon: 'mdi-home-roof', to: '/' },
-		{ title: 'Skills', icon: 'mdi-code-json', to: '/skills' },
-		{ title: 'Education', icon: 'mdi-school-outline', to: '/education' },
+		// { title: 'Education', icon: 'mdi-school-outline', to: '/education' },
 		{ title: 'Experience', icon: 'mdi-briefcase-outline', to: '/experience' },
 		{ title: 'Contact', icon: 'mdi-email-variant', to: '/contact' }
 	];

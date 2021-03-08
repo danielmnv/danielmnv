@@ -72,7 +72,6 @@
                 dense
                 fixed
                 elevate-on-scroll
-                collapse-on-scroll
                 color="background"
             >
                 <v-avatar>

@@ -1,132 +1,48 @@
 <template>
-    <v-container>
-        <v-timeline dense align-top>
-            <!-- Lion Systems Solutions -->
-            <v-timeline-item
-                color="white"
-                fill-dot
-                large
-            >
-                <template v-slot:icon>
-                    <v-avatar>
-                        <img id="lss" src="@/assets/experience/lss.svg">
-                    </v-avatar>
-                </template>
+    <div>
+        <section class="mt-16">
+            <v-container class="text-center">
+                <!-- Logo -->
+                <v-img width="100" :class="lionLogo" src="@/assets/experience/lss.svg"></v-img>
+                <!-- Company -->
+                <h6 class="text-h4 font-weight-black mt-10">
+                    Lion Systems Solutions
+                </h6>
+                <!-- Period -->
+                <h6 class="text-overline">AUGUST 2016 - To date</h6>
+                <p class="text-subtitle-1 mt-10">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio blanditiis eligendi neque, repellendus deserunt provident? Perferendis iusto, omnis porro ea, perspiciatis debitis incidunt, temporibus voluptatem dicta optio impedit. Veritatis, commodi?
+                </p>
 
-                <p class="headline">Lion Systems Solutions <span class="brown--text text--lighten-1 font-weight-bold">2019 - Today</span></p>
-
-                <v-container fluid>
-                    <v-row justify="center">
-                        <!-- Project -->
-                        <v-col v-for="(project, index) in lssProjects" :key="index" cols="12" sm="6" md="6" lg="4">
-                            <v-hover v-slot="{ hover }">
-                                <v-card class="elevation-2">
-                                    <v-card-title>{{ project.name }}</v-card-title>
-
-                                    <v-card-text>
-                                        <p v-for="(paragraph, index) in project.text" :key="index">{{ paragraph }}</p>
-                                    </v-card-text>
-
-                                    <!-- Languages / Frameworks -->
-                                    <template v-if="!mobile">
-                                        <v-scroll-y-transition origin="top center 0">
-                                            <v-overlay
-                                                v-if="hover"
-                                                absolute
-                                                :opacity="isThemeDark? 0.9 : 0.6"
-                                            >
-                                                <v-container>
-                                                    <v-list dense color="transparent">
-                                                        <v-list-item
-                                                            v-for="tool in project.tools"
-                                                            :key="tool.name"
-
-                                                        >
-                                                            <v-list-item-avatar :color="tool.color" size="35">
-                                                                <template v-if="tool.name == 'Prestashop'">
-                                                                    <img :src="require('@/assets/' + tool.avatar)" :alt="tool.name">
-                                                                </template>
-                                                                <template v-else>
-                                                                    <v-icon v-text="tool.icon"></v-icon>
-                                                                </template>
-                                                            </v-list-item-avatar>
-                                                            <v-list-item-content>
-                                                                <v-list-item-title v-text="tool.name"></v-list-item-title>
-                                                            </v-list-item-content>
-                                                        </v-list-item>
-                                                    </v-list>
-                                                </v-container>
-                                            </v-overlay>
-                                        </v-scroll-y-transition>
-                                    </template>
-
-                                    <template v-else>
-                                        <div class="d-flex flex-wrap justify-center pb-3">
-                                            <v-chip
-                                                v-for="(tool, index) in project.tools"
-                                                :key="index"
-                                                :color="tool.color"
-                                                class="ma-1"
-                                                small
-                                                outlined
-                                            >
-                                                <template v-if="tool.name == 'Prestashop'">
-                                                    <v-avatar left>
-                                                        <img :src="require('@/assets/' + tool.avatar)" :alt="tool.name">
-                                                    </v-avatar>
-                                                </template>
-                                                <template v-else>
-                                                    <v-icon dark left>{{ tool.icon }}</v-icon>
-                                                </template>
-                                                {{ tool.name }}
-                                            </v-chip>
-                                        </div>
-                                    </template>
-                                </v-card>
-                            </v-hover>
-                        </v-col>
-                    </v-row>
-                </v-container>
-            </v-timeline-item>
-
-            <v-timeline-item
-                color="white"
-                fill-dot
-                large
-            >
-                <template v-slot:opposite>
-                    <span class="headline font-weight-bold" style="color: #0c0fad">2019</span
+                <v-row>
+                    <v-col 
+                        cols="12" sm="6"
+                        v-for="project in lssProjects"
+                        :key="project.name"
                     >
-                </template>
-                <template v-slot:icon>
-                    <v-avatar>
-                        <img src="@/assets/experience/inegi.png">
-                    </v-avatar>
-                </template>
-                <v-card class="elevation-2">
-                    <v-card-title class="headline">INEGI</v-card-title>
-                    <v-card-text>
-                        Lorem ipsum dolor sit amet, no nam oblique veritus.
-                        Commune scaevola imperdiet nec ut, sed euismod convenire
-                        principes at. Est et nobis iisque percipit, an vim zril
-                        disputando voluptatibus, vix an salutandi sententiae.
-                    </v-card-text>
-                </v-card>
-            </v-timeline-item>
-        </v-timeline>
-    </v-container>
+                        <experience-project class="fill-height" :project="project" />
+                    </v-col>
+                </v-row>
+            </v-container>
+        </section>
+    </div>
 </template>
 
 <script lang="ts">
 import { MetaInfo } from "vue-meta";
 import { Component, Vue } from "vue-property-decorator";
+import ExperienceProject from "@/components/ExperienceProject.vue";
 
 @Component ({
     metaInfo(): MetaInfo {
         return {
             title: 'Experience | DM'
         };
-    }
+    },
+
+    components: {
+        ExperienceProject
+    },
 })
 export default class Experience extends Vue {
     lssProjects = [
@@ -152,7 +68,7 @@ export default class Experience extends Vue {
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eius sunt itaque culpa. Architecto hic quae ab laboriosam eaque, adipisci soluta nam quasi nesciunt illum quia sequi doloremque autem ex!"
             ],
             tools: [
-                { name: 'Prestashop', avatar: 'tools/prestashop.png', color: 'pink' },
+                { name: 'Prestashop', avatar: 'prestashop.png', color: 'pink' },
                 { name: 'Docker', icon: 'mdi-docker', color: 'cyan' },
                 { name: 'GitLab DevOps ', icon: 'mdi-gitlab', color: 'orange darken-3' },
                 { name: 'PHP', icon: 'mdi-language-php', color: 'indigo' },
@@ -176,7 +92,6 @@ export default class Experience extends Vue {
             name: "Company web site",
             text: [
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam tempora distinctio vero nostrum, eum commodi molestias cupiditate omnis sit veritatis alias dolorum incidunt at enim ipsam cumque consectetur, dolor laborum!",
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, amet rem? Molestiae distinctio autem facere optio repellendus eveniet dolorem tempora quaerat sunt magnam nesciunt exercitationem ad, possimus eligendi quam aperiam?"
             ],
             tools: [
                 { name: 'HTML 5', icon: 'mdi-language-html5', color: 'orange' },
@@ -196,12 +111,20 @@ export default class Experience extends Vue {
     get isThemeDark(): boolean {
 		return this.$vuetify.theme.dark;
 	}
+
+    get lionLogo(): string {
+        return `mx-auto ${this.isThemeDark ? 'dark' : 'light'}-logo`;
+    }
 }
 </script>
 
 <style scoped>
-#lss {
+.light-logo {
     filter: invert(48%) sepia(80%) saturate(381%) hue-rotate(4deg) brightness(92%) contrast(88%);
+}
+
+.dark-logo {
+    filter: invert(100%)
 }
 
 </style>

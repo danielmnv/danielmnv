@@ -11,7 +11,11 @@ export default new Vuetify({
             dark: {
                 primary: colors.cyan.base,
                 accent: colors.deepPurple.darken1,
+                overlay: colors.blueGrey.darken3,
                 background: colors.grey.darken4,
+            },
+            light: {
+                overlay: colors.blueGrey.darken3,
             }
         }
     }

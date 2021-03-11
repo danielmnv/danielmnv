@@ -26,9 +26,9 @@
             <v-fade-transition origin="top center 0">
                 <v-overlay
                     absolute
-                    color="accent"
+                    color="overlay"
                     v-if="hover"
-                    :opacity="isThemeDark ? 0.9 : 0.8"
+                    opacity="0.9"
                 >
                     <v-card-text>
                         <!-- Title for desktop -->

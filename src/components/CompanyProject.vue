@@ -3,7 +3,7 @@
         <v-card :ref="project.name" rounded="lg" class="mx-2 elevation-2">
             <!-- Background -->
             <v-img
-                :class="isMdScreen ? 'align-center justify-center' : 'rounded-lg'"
+                :class="isMdScreen ? 'align-center text-center' : 'rounded-lg'"
                 :src="require('@/assets/experience/' + project.img)"
                 :lazy-src="require('@/assets/experience/' + project.img)"
             >
@@ -12,6 +12,7 @@
                     fab
                     x-small 
                     color="accent"
+                    class="mx-auto"
                     v-show="isMdScreen && !hover"
                 >
                     <v-icon>mdi-magnify</v-icon>

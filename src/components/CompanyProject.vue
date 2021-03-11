@@ -78,6 +78,7 @@ export default class ExperienceProject extends Vue {
         return this.$vuetify.breakpoint.mdAndDown;
     }
 
+    // Is theme dark active?
     get isThemeDark(): boolean {
 		return this.$vuetify.theme.dark;
 	}

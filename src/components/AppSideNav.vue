@@ -93,7 +93,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class AppDrawer extends Vue {
+export default class AppSideNav extends Vue {
     @Prop({ required: true }) readonly routes!: Array<object>;
 
     // Is mobile or not

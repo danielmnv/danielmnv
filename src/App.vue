@@ -1,7 +1,7 @@
 <template>
     <v-app>
 		<!-- App drawer -->
-        <app-drawer :routes="routes"></app-drawer>
+        <app-side-nav :routes="routes"></app-side-nav>
 
 		<v-main>
 			<transition :enter-active-class="`animate__animated animate__${mobile ? 'slideInUp' : 'fadeInRight'}`">
@@ -16,12 +16,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import AppDrawer from "@/components/app-drawer.vue";
-import AppBottomNav from "@/components/app-bottom-nav.vue";
+import AppSideNav from "@/components/AppSideNav.vue";
+import AppBottomNav from "@/components/AppBottomNav.vue";
 
 @Component ({
 	components: {
-		AppDrawer,
+		AppSideNav,
 		AppBottomNav
 	}
 })

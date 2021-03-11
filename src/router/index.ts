@@ -24,7 +24,14 @@ const routes: Array<RouteConfig> = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 500)
+    })
+  }
 })
 
 export default router

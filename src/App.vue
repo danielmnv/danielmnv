@@ -4,7 +4,10 @@
         <app-side-nav class="persistent-nav" :routes="routes"></app-side-nav>
 
 		<v-main>
-			<transition :enter-active-class="`animate__animated animate__${mobile ? 'slideInUp' : 'fadeInRight'}`">
+			<transition 
+				mode="out-in"
+				:enter-active-class="`animate__animated animate__${mobile ? 'fadeInUp' : 'fadeInRight'}`" 
+				:leave-active-class="`animate__animated animate__${mobile ? 'fadeOut' : 'fadeOutLeft'}`">
 				<router-view></router-view>
 			</transition>
 		</v-main>

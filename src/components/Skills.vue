@@ -78,7 +78,7 @@ export default class Skills extends Vue {
                 { name: 'Laravel', icon: 'mdi-laravel', color: 'red' },
                 { name: 'Nuxt', icon: 'mdi-nuxt', color: 'green darken-1' },
                 { name: 'Express / Nest', icon: 'mdi-nodejs', color: 'green' },
-                { name: 'MongoDB / Mongoose', icon: 'mdi-code-json', color: 'yellow darken-3' },
+                { name: 'MongoDB / Mongoose', icon: 'mdi-code-braces', color: 'yellow darken-3' },
                 { name: 'SQL', icon: 'mdi-database-outline' },
                 { name: 'API Development', icon: 'mdi-api', color: 'brown lighten-1' },
                 { name: "Firebase", icon: 'mdi-firebase', color: 'yellow darken-3' },

@@ -1,7 +1,7 @@
 <template>
     <v-app>
 		<!-- App drawer -->
-        <app-side-nav :routes="routes"></app-side-nav>
+        <app-side-nav class="persistent-nav" :routes="routes"></app-side-nav>
 
 		<v-main>
 			<transition :enter-active-class="`animate__animated animate__${mobile ? 'slideInUp' : 'fadeInRight'}`">
@@ -10,7 +10,7 @@
 		</v-main>
 	
 		<!-- Mobile bottom navigation -->
-		<app-bottom-nav v-if="mobile" :routes="routes"></app-bottom-nav>
+		<app-bottom-nav v-if="mobile" class="persistent-nav" :routes="routes"></app-bottom-nav>
     </v-app>
 </template>
 
@@ -39,3 +39,7 @@ export default class App extends Vue {
 	}
 }
 </script>
+
+<style scoped>
+.persistent-nav { z-index: 100; }
+</style>

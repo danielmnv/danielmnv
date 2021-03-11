@@ -18,9 +18,9 @@
             ></gmap-marker>
         </gmap-map>
 
-        <!-- <v-container :class="{ 'infoCard' : !mobile }" fluid style="background-color: red"> -->
-            <!-- { 'mx-auto' : mobile } -->
-            <v-card :width="mobile? '500px' : '350px'" flat :class="mobile ? 'mx-auto ma-3' : 'infoCard'">
+        <!-- Info card -->
+        <div class="px-2">
+            <v-card outlined rounded="lg" :width="mobile? '500px' : '350px'" flat :class="mobile ? 'mx-auto ma-3' : 'infoCard'">
                 <v-card-title class="d-flex ml-3">
                     <v-avatar class="pa-2" size="25">
                         <img src="@/assets/mexico.png" alt="Mexico">
@@ -103,7 +103,7 @@
                     </v-row>
                 </v-card-text>
             </v-card>
-        <!-- </v-container> -->
+        </div>
     </div>
 </template>
 

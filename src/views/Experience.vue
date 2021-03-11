@@ -1,12 +1,15 @@
 <template>
     <div>
         <!-- Company -->
-        <company 
+        <section
             v-for="(company, i) in companies" 
             :key="company.prefix" 
-            :company="company" 
             :class="{ 'my-16' : i > 0}"
-        />
+        >
+            <company :company="company" />
+
+            <v-divider v-if="(i + 1) < companies.length" class="my-16"></v-divider>
+        </section>
     </div>
 </template>
 

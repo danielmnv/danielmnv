@@ -207,7 +207,7 @@ export default class Contact extends Vue {
         {
             featureType: 'administrative.country',
             elementType: 'geometry',
-            stylers: [{weight: '2'}, {color: '#7664a8'}]
+            stylers: [{weight: '2'}, {color: '#2979FF'}]
         },
         {
             featureType: 'administrative.country',
@@ -218,7 +218,7 @@ export default class Contact extends Vue {
         {
             featureType: 'administrative.province',
             elementType: 'geometry',
-            stylers: [{color: '#74659e'}, {weight: '3'}] 
+            stylers: [{color: '#1E88E5'}, {weight: '3'}] 
         },
         {
             featureType: 'administrative.province',
@@ -241,13 +241,13 @@ export default class Contact extends Vue {
         {
             featureType: 'landscape',
             elementType: 'all',
-            stylers: [{color: '#9575CD'}]
+            stylers: [{color: '#82B1FF'}]
         },
         /** ROAD */
         {
             featureType: 'road',
             elementType: 'geometry',
-            stylers: [{color: '#B388FF'}]
+            stylers: [{color: '#448AFF'}]
         }
     ];
 

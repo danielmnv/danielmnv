@@ -39,9 +39,9 @@ export default class Skills extends Vue {
         {
             mobileOrder: 2,
             title: 'front-end',
-            subtitle: 'Small sentence:',
+            subtitle: 'Things to do beautiful interfaces:',
             icon: 'mdi-pencil-ruler',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
+            text: "I've been developing a lot of projects in the last years with modern javascript frameworks like Vue and Angular. I have 6 years of experience with HTML, CSS and others tools, with which I've done so many websites with a beautiful responsive design",
             tools: [
                 { name: 'Vue', icon: 'mdi-vuejs', color: 'green darken-1' },
                 { name: 'Angular', icon: 'mdi-angularjs', color: 'red' },
@@ -55,7 +55,7 @@ export default class Skills extends Vue {
         {
             mobileOrder: 1,
             title: 'languages',
-            subtitle: 'Small sentence:',
+            subtitle: 'Languages that I speak:',
             icon: 'mdi-code-json',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
             tools: [
@@ -74,7 +74,7 @@ export default class Skills extends Vue {
         {
             mobileOrder: 3,
             title: 'back-end',
-            subtitle: 'Small sentence:',
+            subtitle: 'Tools with which I break my mind:',
             icon: 'mdi-server',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
             tools: [

@@ -9,7 +9,7 @@
                 Full-stack Web Developer
             </h6>
             <p class="text-subtitle-1 mt-5 text-center">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. In velit quasi est nihil!
+                I love to code beautiful and efficient websites and applications
             </p>
         </v-container>
 
@@ -18,7 +18,7 @@
             <v-container class="text-center">
                 <h6 class="text-h4 font-weight-black">Hi, I'm Daniel Molina!</h6>
                 <p class="text-subtitle-1 mt-10">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, perspiciatis necessitatibus mollitia iste nisi consequuntur iusto tenetur molestiae nesciunt fuga molestias laudantium atque illum eum expedita! Corporis nobis esse id!
+                    I'm a full stack web developer. I have the passion to create an intuitive and beautiful front for the users, I also write an efficient back-end with the logic and optimization that the server needs to run faster for the user.
                 </p>
             </v-container>
         </section>
@@ -98,9 +98,9 @@ export default class Home extends Vue {
 
     get dividerMargin(): string {
         if (this.$vuetify.breakpoint.smAndDown)
-            return 'margin-top: -8rem;'
+            return 'margin-top: -9rem;'
         
-        return 'margin-top: -14rem;';
+        return 'margin-top: -16rem;';
     }
 
     get dividerColor(): string {

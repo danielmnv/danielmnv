@@ -6,7 +6,7 @@
                 color="background"
                 mini-variant
                 permanent
-                floating
+                dark
                 app
             >
                 <v-layout column fill-height>
@@ -69,6 +69,7 @@
         <template v-else>
             <v-app-bar
                 app
+                dark
                 dense
                 fixed
                 elevate-on-scroll

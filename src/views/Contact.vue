@@ -124,25 +124,6 @@ export default class Contact extends Vue {
     defaultStyle = [
         /** ALL */
         {elementType: 'labels.text.stroke', stylers: [{visibility: 'off'}]},
-        /** ADMINISTRATIVE */
-        // Country
-        {
-            featureType: 'administrative.country',
-            elementType: 'geometry',
-            stylers: [{weight: '2'}, {color: '#006064'}]
-        },
-        // Province
-        {
-            featureType: 'administrative.province',
-            elementType: 'geometry',
-            stylers: [{color: '#005b63'}, {weight: '3'}] 
-        },
-        /** LANDSCAPE */
-        {
-            featureType: 'landscape',
-            elementType: 'all',
-            stylers: [{color: '#00838f'}]
-        },
         /** POI */
         {
             featureType: 'poi',
@@ -150,21 +131,7 @@ export default class Contact extends Vue {
             stylers: [{visibility: 'off'}]
         },
         /** ROAD */
-        {
-            featureType: 'road',
-            elementType: 'geometry',
-            stylers: [{color: '#006064'}]
-        },
-        {
-            featureType: 'road',
-            elementType: 'labels.text.fill',
-            stylers: [{color: '#000000'}, {saturation: '-1'}, {lightness: '-100'}]
-        },
-        {
-            featureType: 'road',
-            elementType: 'labels.text.stroke',
-            stylers: [{visibility: 'on'}, {color: '#76c1ca'}]
-        },
+        
         /** TRANSIT */
         {
             featureType: 'transit',
@@ -181,10 +148,20 @@ export default class Contact extends Vue {
         // Country
         {
             featureType: 'administrative.country',
+            elementType: 'geometry',
+            stylers: [{weight: '2'}, {color: '#006064'}]
+        },
+        {
+            featureType: 'administrative.country',
             elementType: 'labels.text.fill',
             stylers: [{color: '#f2f2f2'}]
         },
         // Province
+        {
+            featureType: 'administrative.province',
+            elementType: 'geometry',
+            stylers: [{color: '#005b63'}, {weight: '3'}] 
+        },
         {
             featureType: 'administrative.province',
             elementType: 'labels.text.fill',
@@ -202,6 +179,23 @@ export default class Contact extends Vue {
             elementType: 'labels.text.fill',
             stylers: [{color: '#d8d8d8'}]
         },
+        /** LANDSCAPE */
+        {
+            featureType: 'landscape',
+            elementType: 'all',
+            stylers: [{color: '#00838f'}]
+        },
+        /** ROAD */
+        {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#006064'}]
+        },
+        {
+            featureType: 'road',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#ffffff'}]
+        },
     ];
 
     lightStyle = [
@@ -212,10 +206,20 @@ export default class Contact extends Vue {
         // Country
         {
             featureType: 'administrative.country',
+            elementType: 'geometry',
+            stylers: [{weight: '2'}, {color: '#7664a8'}]
+        },
+        {
+            featureType: 'administrative.country',
             elementType: 'labels.text.fill',
             stylers: [{color: '#1d1d1d'}]
         },
         // Province
+        {
+            featureType: 'administrative.province',
+            elementType: 'geometry',
+            stylers: [{color: '#74659e'}, {weight: '3'}] 
+        },
         {
             featureType: 'administrative.province',
             elementType: 'labels.text.fill',
@@ -233,6 +237,18 @@ export default class Contact extends Vue {
             elementType: 'labels.text.fill',
             stylers: [{color: '#d8d8d8'}]
         },
+        /** LANDSCAPE */
+        {
+            featureType: 'landscape',
+            elementType: 'all',
+            stylers: [{color: '#9575CD'}]
+        },
+        /** ROAD */
+        {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#B388FF'}]
+        }
     ];
 
     // Is mobile or not
@@ -252,5 +268,9 @@ export default class Contact extends Vue {
     position: absolute;
     left: 5rem;
     bottom: 0.4rem;
+}
+.test {
+    color: #76c1ca;
+    /* 7664a8 */
 }
 </style>

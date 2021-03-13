@@ -15,7 +15,10 @@ export default new Vuetify({
                 background: colors.grey.darken4,
             },
             light: {
+                primary: colors.deepPurple.lighten2,
+                accent: colors.blue.lighten3,
                 overlay: colors.blueGrey.darken3,
+                background: colors.grey.darken4,
             }
         }
     }

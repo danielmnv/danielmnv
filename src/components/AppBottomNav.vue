@@ -2,9 +2,10 @@
     <v-bottom-navigation
         background-color="background"
         color="primary"
-        app
         shift
         grow
+        dark
+        app
     >
         <!-- Item -->
         <v-btn

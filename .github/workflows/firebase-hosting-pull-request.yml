@@ -3,6 +3,10 @@
 
 name: Deploy to Firebase Hosting on PR
 'on': pull_request
+
+env:
+  VUE_APP_MAPS_API: ${{ secrets.MAPS_JAVASCRIPT_SERVICE }}
+
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest

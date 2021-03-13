@@ -5,7 +5,7 @@
         <p class="text-h5 font-weight-medium text-capitalize">{{ title }}</p>
 
         <v-card-text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.
+            {{ text }}
 
             <p class="text-subtitle-1 pa-3" :style="`color: ${$vuetify.theme.currentTheme.primary}`" v-text="subtitle"></p>
 
@@ -33,7 +33,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class SkillGroup extends Vue {
-    @Prop({ required: true }) readonly index!: number;
+    @Prop({ required: true }) readonly text!: string;
     @Prop({ required: true }) readonly title!: string;
     @Prop({ required: true }) readonly subtitle!: string;
     @Prop({ required: true }) readonly icon!: string;

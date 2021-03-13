@@ -12,10 +12,10 @@
                     :order-md="index"
                 >
                     <skill-group
-                        :index="index"
                         :icon="group.icon"
                         :title="group.title"
                         :subtitle="group.subtitle"
+                        :text="group.text"
                         :tools="group.tools"
                     />
                 </v-col>
@@ -41,6 +41,7 @@ export default class Skills extends Vue {
             title: 'front-end',
             subtitle: 'Small sentence:',
             icon: 'mdi-pencil-ruler',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
             tools: [
                 { name: 'Vue', icon: 'mdi-vuejs', color: 'green darken-1' },
                 { name: 'Angular', icon: 'mdi-angularjs', color: 'red' },
@@ -56,6 +57,7 @@ export default class Skills extends Vue {
             title: 'languages',
             subtitle: 'Small sentence:',
             icon: 'mdi-code-json',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
             tools: [
                 { name: 'PHP', icon: 'mdi-language-php', color: 'indigo' },
                 { name: 'Typescript', icon: 'mdi-language-typescript', color: 'blue darken-2' },
@@ -74,6 +76,7 @@ export default class Skills extends Vue {
             title: 'back-end',
             subtitle: 'Small sentence:',
             icon: 'mdi-server',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
             tools: [
                 { name: 'Laravel', icon: 'mdi-laravel', color: 'red' },
                 { name: 'Nuxt', icon: 'mdi-nuxt', color: 'green darken-1' },

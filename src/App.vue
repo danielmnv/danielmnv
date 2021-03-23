@@ -3,7 +3,7 @@
 		<!-- App drawer -->
         <app-side-nav class="persistent-nav" :routes="routes"></app-side-nav>
 
-		<v-main>
+		<v-main :style="backgroundColor">
 			<transition 
 				mode="out-in"
 				:enter-active-class="`animate__animated animate__${mobile ? 'fadeInUp' : 'fadeInRight'}`" 
@@ -39,6 +39,15 @@ export default class App extends Vue {
 	// Is mobile or not
     get mobile(): boolean {
         return this.$vuetify.breakpoint.smAndDown;
+	}
+
+	// Is theme dark active?
+    get isThemeDark(): boolean {
+		return this.$vuetify.theme.dark;
+	}
+
+	get backgroundColor(): string {
+		return `background-color: ${this.isThemeDark ? '#121212' : '#f4f6f9'}`;
 	}
 }
 </script>

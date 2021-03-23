@@ -75,7 +75,7 @@
                 elevate-on-scroll
                 color="background"
             >
-                <v-avatar>
+                <v-avatar size="40">
                     <img src="@/assets/dm.svg">
                 </v-avatar>
 

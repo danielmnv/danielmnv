@@ -17,7 +17,7 @@
                     class="d-flex justify-space-around"
                 >
                     <v-col>
-                        <v-icon v-text="tool.icon"></v-icon>
+                        <v-icon v-text="tool.icon" :color="!isThemeDark ? tool.color : ''"></v-icon>
                     </v-col>
                     <v-col>
                         <span v-text="tool.name"></span>
@@ -43,6 +43,11 @@ export default class SkillGroup extends Vue {
     get mobile(): boolean {
         return this.$vuetify.breakpoint.smAndDown;
     }
+
+    // Is theme dark active?
+    get isThemeDark(): boolean {
+		return this.$vuetify.theme.dark;
+	}
 }
 </script>
 

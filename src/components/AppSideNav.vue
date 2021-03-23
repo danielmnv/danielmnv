@@ -52,7 +52,7 @@
                     <v-list nav flat>
                         <v-list-item @click="toggleTheme">
                             <v-list-item-icon>
-                                <v-icon>mdi-invert-colors</v-icon>
+                                <v-icon :color="themeIconColor">mdi-theme-light-dark</v-icon>
                             </v-list-item-icon>
 
                             <v-list-item-content>
@@ -83,10 +83,25 @@
 
                 <!-- Item -->
                 <v-btn icon @click="toggleTheme">
-                    <v-icon>mdi-invert-colors</v-icon>
+                    <v-icon :color="themeIconColor">mdi-theme-light-dark</v-icon>
                 </v-btn>
             </v-app-bar>
         </template>
+
+        <v-snackbar
+            right
+            text
+            :top="mobile"
+            :light="!isThemeDark"
+            transition="scroll-x-reverse-transition"
+            rounded="lg"
+            v-model="chosenSideSanck"
+        >
+            You choose {{ isThemeDark ? 'dark' : 'light' }} side
+            <template v-slot:action="{ attrs }">
+                <v-icon right v-bind="attrs" v-text="themeIcon" :color="themeIconColor"></v-icon>
+            </template>
+        </v-snackbar>
     </div>
 </template>
 
@@ -95,6 +110,8 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class AppSideNav extends Vue {
+    chosenSideSanck = false;
+
     @Prop({ required: true }) readonly routes!: Array<object>;
 
     // Is mobile or not
@@ -102,7 +119,21 @@ export default class AppSideNav extends Vue {
         return this.$vuetify.breakpoint.smAndDown;
 	}
 
+    // Is theme dark active?
+    get isThemeDark(): boolean {
+		return this.$vuetify.theme.dark;
+	}
+
+    get themeIcon(): string {
+        return `mdi-${this.isThemeDark ? 'moon-waning-crescent' : 'white-balance-sunny'}`
+    }
+
+    get themeIconColor(): string {
+        return this.isThemeDark ? '' : 'yellow darken-3';
+    }
+
     toggleTheme(): void {
+        this.chosenSideSanck = true;
 		this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     }
 }

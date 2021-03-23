@@ -20,7 +20,7 @@
 
         <!-- Info card -->
         <div class="px-2">
-            <v-card outlined rounded="lg" :width="mobile? '500px' : '350px'" flat :class="mobile ? 'mx-auto ma-3' : 'infoCard'">
+            <v-card outlined rounded="lg" elevation="2" :width="mobile? '500px' : '350px'" flat :class="mobile ? 'mx-auto ma-3' : 'infoCard'">
                 <v-card-title class="d-flex ml-3">
                     <v-avatar class="pa-2" size="25">
                         <img src="@/assets/mexico.png" alt="Mexico">
@@ -235,7 +235,7 @@ export default class Contact extends Vue {
         {
             featureType: 'administrative.neighborhood',
             elementType: 'labels.text.fill',
-            stylers: [{color: '#d8d8d8'}]
+            stylers: [{color: '#f4f6f9'}]
         },
         /** LANDSCAPE */
         {

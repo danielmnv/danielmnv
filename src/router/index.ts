@@ -26,7 +26,7 @@ const routes: Array<RouteConfig> = [
 const router = new VueRouter({
   routes,
   scrollBehavior() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve({ x: 0, y: 0 })
       }, 500)

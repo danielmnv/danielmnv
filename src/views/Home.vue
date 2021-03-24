@@ -1,17 +1,7 @@
 <template>
     <div>
-        <!-- Init -->
-        <v-container class="d-flex flex-column align-center justify-space-around" :style="fullHeight">
-            <v-avatar size="150px" class="elevation-5 pa-2">
-                <img src="@/assets/me.jpg" alt="Daniel Molina" />
-            </v-avatar>
-            <h6 class="text-h3 text-center">
-                Full-stack Web Developer
-            </h6>
-            <p class="text-subtitle-1 mt-5 text-center">
-                I love to code beautiful and efficient websites and applications
-            </p>
-        </v-container>
+        <!-- Introduction -->
+        <indtroduction />
 
         <!-- Welcome -->
         <section :class="dividerText" :style="dividerColor">
@@ -49,6 +39,7 @@
 <script lang="ts">
 import { MetaInfo } from "vue-meta";
 import { Component, Vue } from "vue-property-decorator";
+import Indtroduction from "@/components/Introduction.vue";
 import Skills from "@/components/Skills.vue";
 import Knowledge from "@/components/Knowledge.vue";
 import About from "@/components/About.vue";
@@ -61,6 +52,7 @@ import About from "@/components/About.vue";
     },
 
     components: {
+        Indtroduction,
         Skills,
         Knowledge,
         About
@@ -70,21 +62,12 @@ export default class Home extends Vue {
     loading = true;
 
     mounted() {
-        setTimeout(() => {
-            this.loading = false;
-        }, 600);
+        setTimeout(() => this.loading = false, 600);
     }
 
     // Is mobile or not
     get mobile(): boolean {
         return this.$vuetify.breakpoint.smAndDown;
-    }
-
-    get fullHeight(): string {
-        if (this.$vuetify.breakpoint.smAndDown)
-            return 'height: 90vh;'
-        
-        return 'height: 100vh';
     }
 
     get dividerText(): string {

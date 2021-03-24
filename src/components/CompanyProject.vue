@@ -1,12 +1,26 @@
 <template>
     <v-hover v-slot="{ hover }">
-        <v-card :ref="project.name" rounded="lg" class="mx-2 elevation-2">
+        <v-card rounded="lg" class="mx-2 elevation-2">
             <!-- Background -->
             <v-img
                 :class="isMdScreen ? 'align-center text-center' : 'rounded-lg'"
                 :src="require('@/assets/experience/' + project.img)"
-                :lazy-src="require('@/assets/experience/' + project.img)"
+                lazy-src="@/assets/experience/skeleton.jpg"
             >
+                <!-- Loading image -->
+                <template v-slot:placeholder>
+                    <v-row
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center"
+                    >
+                        <v-progress-circular
+                            indeterminate
+                            color="grey lighten-3"
+                        ></v-progress-circular>
+                    </v-row>
+                </template>
+
                 <!-- Button to represent that the user can touch the card and the content will appear (only phones & tablets) -->
                 <v-btn 
                     fab

@@ -2,7 +2,7 @@
     <!-- Company -->
     <div>
         <!-- Logo -->
-        <v-img width="100" :class="companyLogo" :src="require('@/assets/experience/' + company.img)"></v-img>
+        <v-img :height="company.prefix == 'in' ? 90 : 120" contain :class="companyLogo" :src="require('@/assets/experience/' + company.img)"></v-img>
 
         <!-- Content -->
         <div :class="contentMargin" :style="dividerColor">
@@ -99,8 +99,8 @@ export default class Company extends Vue {
 .lss-dark-logo { filter: invert(100%); }
 
 /* INGEGI logo */
-.in-light-logo { background-color: transparent; }
-.in-dark-logo { background-color: #f5f5f5; }
+.in-light-logo { background-color: transparent; width: 110px; }
+.in-dark-logo { background-color: #f5f5f5; width: 110px; }
 
 /* Company content */
 .company-title-card { margin-top: -3rem; }

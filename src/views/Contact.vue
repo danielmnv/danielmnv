@@ -46,7 +46,7 @@
                                 <div class="pa-1 d-flex align-center">
                                     <v-icon class="pa-2" color="primary">{{ `mdi-phone${$vuetify.theme.dark ? '-outline' : ''}` }}</v-icon>
                                     <div class="pa-2">
-                                        +51 449 204 42 78
+                                        <a class="link" href="tel:+514492044278">+51 449 204 42 78</a>
                                     </div>
                                 </div>
 
@@ -54,7 +54,7 @@
                                 <div class="pa-1 d-flex align-center">
                                     <v-icon class="pa-2" color="primary">mdi-at</v-icon>
                                     <div class="pa-2">
-                                        danmnvx@gmail.com
+                                        <a class="link" href="mailto:danmnvx@gmail.com">danmnvx@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,17 +86,17 @@
                                 >
                                     <v-icon>mdi-github</v-icon>
                                 </v-btn>
-                                <!-- Gmail -->
+                                <!-- Instagram -->
                                 <v-btn
                                     fab
                                     small
                                     dark
                                     class="pa-2 ma-2"
-                                    color="red"
-                                    href="mailto:danmnvx@gmail.com"
+                                    color="purple"
+                                    href="https://www.instagram.com/danielmnv/"
                                     target="_blank"
                                 >
-                                    <v-icon>mdi-gmail</v-icon>
+                                    <v-icon>mdi-instagram</v-icon>
                                 </v-btn>
                             </div>
                         </v-col>
@@ -269,8 +269,7 @@ export default class Contact extends Vue {
     left: 5rem;
     bottom: 0.4rem;
 }
-.test {
-    color: #76c1ca;
-    /* 7664a8 */
+.link {
+    text-decoration: none;
 }
 </style>

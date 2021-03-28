@@ -41,7 +41,7 @@ export default class Skills extends Vue {
             title: 'front-end',
             subtitle: 'Things to do beautiful interfaces:',
             icon: 'mdi-pencil-ruler',
-            text: "I've been developing a lot of projects in the last years with modern javascript frameworks like Vue and Angular. I have 6 years of experience with HTML, CSS and others tools, with which I've done so many websites with a beautiful responsive design",
+            text: "Within the past couple of years I've developed a ton of projects using modern javascript frameworks like Vue and Angular although it's worth to mention that my experience with HTML, CSS and Javascript goes up to 4 years now.",
             tools: [
                 { name: 'Vue', icon: 'mdi-vuejs', color: 'green darken-1' },
                 { name: 'Angular', icon: 'mdi-angularjs', color: 'red' },
@@ -55,9 +55,9 @@ export default class Skills extends Vue {
         {
             mobileOrder: 1,
             title: 'languages',
-            subtitle: 'Languages that I speak:',
+            subtitle: 'Languages I know:',
             icon: 'mdi-code-json',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
+            text: "Since I've decided to become a programmer 6 years ago I've learned a lot of languages and I still doing it, because I'm curious and I love to discover the features that every language has.",
             tools: [
                 { name: 'PHP', icon: 'mdi-language-php', color: 'indigo' },
                 { name: 'Typescript', icon: 'mdi-language-typescript', color: 'blue darken-2' },
@@ -76,7 +76,7 @@ export default class Skills extends Vue {
             title: 'back-end',
             subtitle: 'Tools with which I break my mind:',
             icon: 'mdi-server',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptates in labore optio eos molestiae beatae reprehenderit.',
+            text: "There are so many DB, frameworks and tools to create servers, that's the reason I've been using some of them, to choose the proper DB, language and environment to host the best server.",
             tools: [
                 { name: 'Laravel', icon: 'mdi-laravel', color: 'red' },
                 { name: 'Nuxt', icon: 'mdi-nuxt', color: 'green darken-1' },

@@ -8,7 +8,9 @@
             <v-container class="text-center">
                 <h6 class="text-h4 font-weight-black">Hi, I'm Daniel Molina!</h6>
                 <p class="text-subtitle-1 mt-10">
-                    I'm a full stack web developer. I have the passion to create an intuitive and beautiful front for the users, I also write an efficient back-end with the logic and optimization that the server needs to run faster for the user.
+                    I'm a full-stack web developer and I'm passionate about creating intuitive and beautiful designs for the user. <br>
+                    
+                    I also develop efficient back-end solutions with the logic and optimization that the server needs to run flawlessly. Though I'm a full-stack developer I'm also proficient both in front-end and back-end development.
                 </p>
             </v-container>
         </section>
@@ -24,8 +26,15 @@
             <v-container class="text-center">
                 <h6 class="text-h4 font-weight-black">About Me</h6>
                 <p class="text-subtitle-1 mt-10">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus laudantium neque velit, debitis ab voluptatibus sint eveniet, dignissimos provident similique accusamus labore itaque quod accusantium adipisci! Animi voluptates modi minus!
+                    I've been developing lots of projects for years, some of which have become remarkable websites. <br>
+                    I can turn a thought into a powerful project and communicate that vision to my teammates. Thus, being an acertive workteam leader is something I can do well. <br>
+                    I'm a quick learner because I've always searched for knowledge by my own. I also like to discover new features, frameworks and languages, therefore I'd be able to work within any environment.
                 </p>
+                <!-- TODO: implement download feature -->
+                <!-- <v-btn :block="mobile" width="250px" rounded dark color="blue-grey darken-4">
+                    Resume
+                    <v-icon right>mdi-cloud-download</v-icon>
+                </v-btn> -->
             </v-container>
         </section>
         

@@ -28,7 +28,7 @@
             <span class="reserved-word">constructor()</span> {
                 <span class="type">super</span><span class="reserved-word">()</span>;
                 <span class="type">this</span>.<span class="property">name</span> = <span class="string">"Daniel Molina"</span>;
-                <span class="type">this</span>.<span class="property">profile</span> = <span class="string">"Full-stack web developer"</span>;
+                <span class="type">this</span>.<span class="property">profile</span> = <span class="string">"Full stack web developer"</span>;
             }
 
             <span class="reserved-word">get</span> <span class="function">education</span><span class="reserved-word">()</span>: <span class="type">Object</span> {

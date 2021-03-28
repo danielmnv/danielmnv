@@ -44,7 +44,7 @@
                     v-if="hover"
                     opacity="0.9"
                 >
-                    <v-card-text>
+                    <v-card-text class="text-center">
                         <!-- Title for desktop -->
                         <span class="text-h6" v-if="!isMdScreen">{{ project.name }}</span>
 

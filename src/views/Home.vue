@@ -1,229 +1,123 @@
 <template>
     <div>
-        <!-- Full background -->
-        <v-img
-            class="full-height-vh white--text"
-            src="@/assets/background.jpg"
-        >
-            <div v-if="!loading">
-                <!-- Logo -->
-                <transition
-                    appear
-                    :appear-active-class="mobile? 'bounceInLeft' : 'flipInX'"
-                >
-                    <div>
-                        <img :class="`logo ${logoClass}`" src="@/assets/dm.svg">
+        <!-- Introduction -->
+        <indtroduction />
 
-                    </div>
-                </transition>
+        <!-- Welcome -->
+        <section :class="dividerText" :style="dividerColor">
+            <v-container class="text-center">
+                <h6 class="text-h4 font-weight-black">Hi, I'm Daniel Molina!</h6>
+                <p class="text-subtitle-1 mt-10">
+                    I'm a full-stack web developer and I'm passionate about creating intuitive and beautiful designs for the user. <br>
+                    
+                    I also develop efficient back-end solutions with the logic and optimization that the server needs to run flawlessly. Though I'm a full-stack developer I'm also proficient both in front-end and back-end development.
+                </p>
+            </v-container>
+        </section>
 
-                <!-- Avatar, social media & name -->
-                <v-container fluid>
-                    <v-row
-                        dense
-                        class="full-height-vh"
-                        align="center"
-                        justify="center"
-                    >
-                        <v-col cols="12" md="5" lg="4">
-                            
-                            <div :class="avatarClass">
-                                <!-- Avatar -->
-                                <transition
-                                    appear
-                                    :appear-active-class="mobile? 'zoomIn' : 'flipInY'"
-                                >
-                                    <v-avatar
-                                        :size="!mobile ? '250px' : '170px'"
-                                        class="elevation-1 pa-2"
-                                    >
-                                        <img src="@/assets/me.jpg" alt="Daniel Molina" />
-                                    </v-avatar>
-                                </transition>
-                                <!-- Social Media -->
-                                <transition
-                                    appear
-                                    :appear-active-class="mobile? 'flipInX' : 'flipInY'"
-                                >
-                                    <div :class="`pa-2 ${!mobile ? 'ml-5' : ''}`">
-                                        <div
-                                            :class="`full-height-percentage d-flex ${mobile ? 'flex-row' : 'flex-column'} justify-center`"
-                                        >
-                                            <!-- Linked In -->
-                                            <v-btn
-                                                fab
-                                                small
-                                                dark
-                                                class="pa-2 ma-2"
-                                                color="blue darken-4"
-                                                href="https://www.linkedin.com/in/daniel-molina-469668194/"
-                                                target="_blank"
-                                            >
-                                                <v-icon>mdi-linkedin</v-icon>
-                                            </v-btn>
-                                            <!-- GitHub -->
-                                            <v-btn
-                                                fab
-                                                small
-                                                dark
-                                                class="pa-2 ma-2"
-                                                color="blue-grey darken-4"
-                                                href="https://github.com/danielmnv"
-                                                target="_blank"
-                                            >
-                                                <v-icon>mdi-github</v-icon>
-                                            </v-btn>
-                                            <!-- Gmail -->
-                                            <v-btn
-                                                fab
-                                                small
-                                                dark
-                                                class="pa-2 ma-2"
-                                                color="red"
-                                                href="mailto:danmnvx@gmail.com"
-                                                target="_blank"
-                                            >
-                                                <v-icon>mdi-gmail</v-icon>
-                                            </v-btn>
-                                        </div>
-                                    </div>
-                                </transition>
-                            </div>
-                        </v-col>
+        <!-- Skills & Knowledge-->
+        <v-container :style="dividerMargin">
+            <skills />
+            <knowledge />
+        </v-container>
 
-                        <!-- Name -->
-                        <v-col cols="12" md="7" lg="8">
-                            <transition
-                                appear
-                                :appear-active-class="mobile? 'bounceInUp' : 'bounceInRight'"
-                            >
-                                <p id="myName" class="text-center">Daniel Molina</p>
-                            </transition>
-                        </v-col>
-
-                        <!-- Coming soon mobile -->
-                        <v-col v-if="mobile" cols="12">
-                            <transition
-                                appear
-                                appear-active-class="fadeInUpBig"
-                            >
-                                <p class=" text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
-                            </transition>
-                        </v-col>
-                    </v-row>
-
-                    <!-- Coming soon desktop -->
-                    <transition
-                        appear
-                        appear-active-class="fadeInUpBig"
-                    >
-                        <div>
-                            <p v-if="!mobile" id="coming" class="text-center text-subtitle2 font-weight-black">Coming Soon ...</p>
-                        </div>
-                    </transition>
-                </v-container>
-
-            </div>
-        </v-img>
+        <!-- About -->
+        <section :class="dividerText" :style="dividerColor">
+            <v-container class="text-center">
+                <h6 class="text-h4 font-weight-black">About Me</h6>
+                <p class="text-subtitle-1 mt-10">
+                    I've been developing lots of projects for years, some of which have become remarkable websites. <br>
+                    I can turn a thought into a powerful project and communicate that vision to my teammates. Thus, being an acertive workteam leader is something I can do well. <br>
+                    I'm a quick learner because I've always searched for knowledge by my own. I also like to discover new features, frameworks and languages, therefore I'd be able to work within any environment.
+                </p>
+                <!-- TODO: implement download feature -->
+                <!-- <v-btn :block="mobile" width="250px" rounded dark color="blue-grey darken-4">
+                    Resume
+                    <v-icon right>mdi-cloud-download</v-icon>
+                </v-btn> -->
+            </v-container>
+        </section>
+        
+        <!-- About in code -->
+        <v-container :style="dividerMargin">
+            <about />
+        </v-container>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { MetaInfo } from "vue-meta";
+import { Component, Vue } from "vue-property-decorator";
+import Indtroduction from "@/components/Introduction.vue";
+import Skills from "@/components/Skills.vue";
+import Knowledge from "@/components/Knowledge.vue";
+import About from "@/components/About.vue";
 
-export default Vue.extend({
-    name: 'Home',
-
-    metaInfo: {
-        title: 'Resume | DM',
+@Component({
+    metaInfo(): MetaInfo {
+        return {
+            title: "Resume | DM",
+        };
     },
 
-    data: () => ({
-        loading: true
-    }),
+    components: {
+        Indtroduction,
+        Skills,
+        Knowledge,
+        About
+    }
+})
+export default class Home extends Vue {
+    loading = true;
 
     mounted() {
-        setTimeout(() => {
-            this.loading = false;
-        }, 500);
-    },
-
-    computed: {
-        // Is mobile or not
-        mobile() {
-            return this.$vuetify.breakpoint.smAndDown;
-        },
-
-        // Class for logo
-        logoClass() {
-            if (this.$vuetify.breakpoint.lgAndUp)
-                return 'logoDesktop';
-            else if (this.$vuetify.breakpoint.mdOnly)
-                return 'logoTablet';
-            
-            return 'logoMobile';
-        },
-
-        // Class for avatar space
-        avatarClass() {
-            if (!this.mobile)
-                return "d-flex justify-end"
-            
-            return "d-flex flex-column align-center";
-        },
+        setTimeout(() => this.loading = false, 600);
     }
-});
+
+    // Is mobile or not
+    get mobile(): boolean {
+        return this.$vuetify.breakpoint.smAndDown;
+    }
+
+    get dividerText(): string {
+        if (this.$vuetify.breakpoint.lgAndUp)
+            return 'welcome-text-lg';
+        else if (this.$vuetify.breakpoint.mdOnly)
+            return 'welcome-text-md';
+        else
+            return 'welcome-text-sm';
+    }
+
+    get dividerMargin(): string {
+        if (this.$vuetify.breakpoint.smAndDown)
+            return 'margin-top: -9rem;'
+        
+        return 'margin-top: -16rem;';
+    }
+
+    get dividerColor(): string {
+        return `background-color: ${this.$vuetify.theme.currentTheme.accent};`;
+    }
+}
 </script>
 
 <style scoped>
-/* Full viewport height */
-.full-height-vh {
-    height: 100vh;
+/* Welcome text */
+.welcome-text-lg {
+    padding: 9rem 1.5rem;
+    padding-bottom: 18rem;
+    width: 100%;
 }
 
-/* Full parent height */
-.full-height-percentage {
-    height: 100%;;
+.welcome-text-md {
+    padding: 9rem 1.5rem;
+    padding-bottom: 16rem;
+    width: 100%;
 }
 
-/* Name */
-#myName {
-    font-size: 4rem !important;
-    font-weight: 200;
-    line-height: 5rem;
-    letter-spacing: 0.1666666667em;
-    text-transform: uppercase;
-}
-
-/* Coming soon (temporal) */
-#coming {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-/**
-*   Logos
-*/
-.logo {
-    position: absolute;
-    top: 1rem;
-}
-
-.logoDesktop {
-    height: 12vh;
-    right: 5.5rem;
-}
-
-.logoTablet {
-    height: 10vh;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.logoMobile {
-    height: 5vh;
-    left: 2rem;
+.welcome-text-sm {
+    padding: 5rem 1.5rem;
+    padding-bottom: 9rem;
+    width: 100%;
 }
 </style>

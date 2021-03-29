@@ -12,6 +12,9 @@
 				<router-view></router-view>
 			</transition>
 		</v-main>
+
+		<!-- Go to top -->
+		<fab-top />
 	
 		<!-- Mobile bottom navigation -->
 		<app-bottom-nav v-if="mobile" class="persistent-nav" :routes="routes"></app-bottom-nav>
@@ -22,11 +25,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import AppSideNav from "@/components/AppSideNav.vue";
 import AppBottomNav from "@/components/AppBottomNav.vue";
+import FabTop from "@/components/FabTop.vue";
 
 @Component ({
 	components: {
 		AppSideNav,
-		AppBottomNav
+		AppBottomNav,
+		FabTop
 	}
 })
 export default class App extends Vue {

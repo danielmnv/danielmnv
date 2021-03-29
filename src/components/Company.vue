@@ -77,6 +77,9 @@ export default class Company extends Vue {
         if (this.company.projects?.length) {
             classes += ' company-has-projects';
         }
+        else if (this.company.prefix == 'in') {
+            classes += ' last-company';
+        }
 
         return classes;
     }
@@ -111,5 +114,8 @@ export default class Company extends Vue {
 }
 .company-has-projects {
     padding-bottom: 9rem;
+}
+.last-company {
+    padding-bottom: 6rem;
 }
 </style>

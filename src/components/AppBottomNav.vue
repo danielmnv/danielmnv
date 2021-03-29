@@ -3,6 +3,7 @@
         background-color="background"
         color="primary"
         shift
+        fixed
         grow
         dark
         app

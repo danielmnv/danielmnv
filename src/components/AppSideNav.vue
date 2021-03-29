@@ -89,17 +89,24 @@
         </template>
 
         <v-snackbar
-            right
             text
-            :top="mobile"
-            :light="!isThemeDark"
-            transition="scroll-x-reverse-transition"
             rounded="lg"
+            :top="mobile"
+            :left="!mobile"
+            :light="!isThemeDark"
+            :class="{ 'snackbar-offset': !mobile }"
+            :transition="`scroll-${mobile ? 'y' : 'x'}-transition`"
             v-model="chosenSideSanck"
         >
             You choose {{ isThemeDark ? 'dark' : 'light' }} side
             <template v-slot:action="{ attrs }">
-                <v-icon right v-bind="attrs" v-text="themeIcon" :color="themeIconColor"></v-icon>
+                <v-btn icon  @click="chosenSideSanck = false">
+                    <v-icon
+                        v-bind="attrs"
+                        v-text="themeIcon"
+                        :color="themeIconColor"
+                    />
+                </v-btn>
             </template>
         </v-snackbar>
     </div>
@@ -145,5 +152,9 @@ export default class AppSideNav extends Vue {
 	font-weight: 800;
 	letter-spacing: 0.1666666667em;
     text-transform: uppercase !important;
+}
+
+.snackbar-offset {
+    margin-left: 56px;
 }
 </style>

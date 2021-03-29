@@ -64,7 +64,7 @@ export default class Introduction extends Vue {
 
     get fullHeight(): string {
         if (this.$vuetify.breakpoint.smAndDown)
-            return 'height: 85vh;'
+            return 'height: calc(100vh - 100px);'
         
         return 'height: 100vh;';
     }

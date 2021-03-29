@@ -25,20 +25,19 @@
                     <v-avatar class="pa-2" size="25">
                         <img src="@/assets/mexico.png" alt="Mexico">
                     </v-avatar>
-                    <span class="pa-2">México</span>
+                    <span class="pa-2">Mexico</span>
                 </v-card-title>
-                <v-card-subtitle class="ml-3">Aguascalientes, Ags.</v-card-subtitle>
+
                 <v-card-text>
                     <v-row dense no-gutters>
                         <!-- Info -->
                         <v-col cols="12" md="10">
-                            <div class="d-flex flex-column justify-end">
-                                <!-- Address -->
+                            <div class="d-flex fill-height flex-column justify-center">
+                                <!-- Location -->
                                 <div class="pa-1 d-flex">
                                     <v-icon class="pa-2" color="primary">{{ `mdi-map-marker${$vuetify.theme.dark ? '-outline' : ''}` }}</v-icon>
                                     <div class="pa-2">
-                                        <span>Paseo del Olivar Poniente #207. </span><br v-if="!mobile">
-                                        <span>Nueva Alameda. CP 20164.</span>
+                                        <span>Aguascalientes, Ags</span><br v-if="!mobile">
                                     </div>
                                 </div>
 

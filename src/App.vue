@@ -37,6 +37,13 @@ export default class App extends Vue {
 		{ title: 'Contact', icon: 'mdi-email-variant', to: '/contact' }
 	];
 
+	mounted() {
+		// Get the theme saved in storage
+		if (localStorage.getItem('dark') == 'true') {
+			setTimeout(() => this.$vuetify.theme.dark = true, 1);
+		}
+	}
+
 	// Is mobile or not
     get mobile(): boolean {
         return this.$vuetify.breakpoint.smAndDown;

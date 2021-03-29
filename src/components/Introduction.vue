@@ -7,20 +7,14 @@
         </v-avatar>
 
         <!-- Typed text -->
-        <vue-typed-js 
-            class="static-el"
-            :loop="true"
-            :typeSpeed="70"
-            :backSpeed="30"
-            :backDelay="1500"
-            :startDelay="1500"
-            :smartBackspace="true"
-            :showCursor="true"
-            :cursorChar="'_'"
-            :strings="['Programming Lover', 'Full stack Web Developer', 'Mobile Developer']"
-        >
-            <h6 class="text-h4 text-center">&nbsp;<span class="typing"></span></h6>
-        </vue-typed-js>
+        <div class="static-el text-center">
+            <span id="typed" class="text-h4"></span>
+        </div>
+        <div id="typed-strings">
+            <p>Programming Lover <v-icon color="red" large>mdi-heart</v-icon></p>
+            <p>Full stack Web Developer <v-icon color="primary" large>mdi-code-tags</v-icon></p>
+            <p>Mobile Developer <v-icon color="blue darken-1" large>mdi-cellphone</v-icon></p>
+        </div>
 
         <!-- Legend -->
         <p class="static-el text-subtitle-1 mt-5 text-center">
@@ -40,6 +34,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { ParticlesBg } from "particles-bg-vue";
+import Typed from "typed.js"
 
 @Component({
     components: {
@@ -47,6 +42,20 @@ import { ParticlesBg } from "particles-bg-vue";
     }
 })
 export default class Introduction extends Vue {
+
+    mounted() {
+        new Typed('#typed', {
+            loop: true,
+            typeSpeed: 70,
+            backSpeed: 30,
+            backDelay: 1500,
+            startDelay: 1500,
+            smartBackspace: true,
+            showCursor: true,
+            cursorChar: '_',
+            stringsElement: '#typed-strings'
+        });
+    }
 
     // Is mobile or not
     get mobile(): boolean {

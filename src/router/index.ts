@@ -25,6 +25,7 @@ const routes: Array<RouteConfig> = [
 
 const router = new VueRouter({
   routes,
+  mode: 'history',
   scrollBehavior() {
     return new Promise((resolve) => {
       setTimeout(() => {

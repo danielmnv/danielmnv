@@ -42,7 +42,7 @@ export default class Knowledge extends Vue {
     knowledge = [
         {
             name: 'Linux',
-            text: "I'm a huge fan of Linux, I've been working with Linux distros for 4 years since I decided to switch from Windows. I've used distros based on Debian and derivates like Ubuntu, Deepin, Elementary, Mint, etcetera. In the previous year I used Fedora and CentOS. Right now I'm working with Arch and Manjaro and I won't change them in a long time because I love them.",
+            text: "I'm a huge Linux fan. I've been working with Linux distros for over 4 years, that started when I decided to switch from Windows. I've used several different distros, some were Debian based and other were derivates like Ubuntu, Deepin, Elementary, Mint, etcetera. Last year I was using Fedora and CentOS and now I'm working with Arch and Manjaro, I love them both so I'll continue using them for a long time.",
             tools: [
                 { name: "Debian", icon: 'mdi-debian', color: 'pink darken-3' },
                 { name: "Arch Linux", icon: 'mdi-arch', color: 'blue darken-2' },
@@ -51,7 +51,7 @@ export default class Knowledge extends Vue {
         },
         {
             name: 'Git',
-            text: "I have a lot of experience with git and platforms like GitHub/GitLab. I've lead small team works where I've managed the issues, pull(merge) requests, dev ops and deployments for the repositories",
+            text: "I have a lot of experience with git and platforms like GitHub/GitLab. I've lead small work teams where I've managed issues, pull(merge) requests, dev-ops and deployments for the repositories",
             tools: [
                 { name: "GitHub", icon: 'mdi-github' },
                 { name: "Git", icon: 'mdi-git', color: 'orange darken-4' },
@@ -60,7 +60,7 @@ export default class Knowledge extends Vue {
         },
         {
             name: 'Mobile',
-            text: "My secondary profile is mobile development, I've created some apps with native Android (Java) and also Flutter and Ionic for apps that works in iOS and Android devices, in every app I used firebase to store the data, process the auth and create a small functions working as API.",
+            text: " My secondary profile is mobile development. I've created some apps with native Android (Java), also Flutter and Ionic for apps that work both in iOS and android devices. I've used firebase in every app to store the data, do authentication and to create small functions that work as an API.",
             tools: [
                 { name: "Flutter", icon: false, color: 'cyan darken-3', src: 'flutter.svg'},
                 { name: "Android", icon: 'mdi-android', color: 'green' },

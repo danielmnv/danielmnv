@@ -76,7 +76,7 @@ export default class Skills extends Vue {
             title: 'back-end',
             subtitle: 'Tools with which I break my mind:',
             icon: 'mdi-server',
-            text: "There are so many DB, frameworks and tools to create servers, that's the reason I've been using some of them, to choose the proper DB, language and environment to host the best server.",
+            text: "The amount of DB's, frameworks and tool to create the perfect server for an application is too high but that is not a problem for me. I know how to choose the proper DB, language and environment for a specific project.",
             tools: [
                 { name: 'Laravel', icon: 'mdi-laravel', color: 'red' },
                 { name: 'Nuxt', icon: 'mdi-nuxt', color: 'green darken-1' },

@@ -20,7 +20,7 @@
                 >
                     <template v-if="tool.name == 'Flutter' || tool.name == 'Ionic'">
                         <v-avatar left>
-                            <img :src="require('@/assets/icons/' + tool.src)" :alt="tool.name">
+                            <img class="svg-icon" :src="require('@/assets/icons/' + tool.src)" :alt="tool.name">
                         </v-avatar>
                     </template>
                     <template v-else>
@@ -64,7 +64,7 @@ export default class Knowledge extends Vue {
             tools: [
                 { name: "Flutter", icon: false, color: 'cyan darken-3', src: 'flutter.svg'},
                 { name: "Android", icon: 'mdi-android', color: 'green' },
-                { name: "Ionic", icon: false, color: 'deep-purple darken-3', src: 'ionic.png'},
+                { name: "Ionic", icon: false, color: 'deep-purple darken-3', src: 'ionic.svg'},
             ]
         }
     ];
@@ -78,5 +78,8 @@ export default class Knowledge extends Vue {
 .knowledge-title {
     text-align: center;
     margin-bottom: 5rem; 
+}
+.svg-icon {
+    filter: invert(100%);
 }
 </style>

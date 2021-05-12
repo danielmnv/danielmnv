@@ -17,7 +17,14 @@
                     class="d-flex justify-space-around"
                 >
                     <v-col>
-                        <v-icon v-text="tool.icon" :color="!isThemeDark ? tool.color : ''"></v-icon>
+                        <template v-if="!tool.icon">
+                            <v-avatar left size="23">
+                                <img :class="{ 'svg-icon' : isThemeDark }" :src="require('@/assets/icons/' + tool.src)" :alt="tool.name">
+                            </v-avatar>
+                        </template>
+                        <template v-else>
+                            <v-icon v-text="tool.icon" :color="!isThemeDark ? tool.color : ''"></v-icon>
+                        </template>
                     </v-col>
                     <v-col>
                         <span v-text="tool.name"></span>

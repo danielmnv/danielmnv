@@ -45,6 +45,7 @@ export default class Skills extends Vue {
             tools: [
                 { name: 'Vue', icon: 'mdi-vuejs', color: 'green darken-1' },
                 { name: 'Angular', icon: 'mdi-angularjs', color: 'red' },
+                { name: 'React', icon: 'mdi-react', color: 'cyan lighten-1' },
                 { name: 'HTML 5', icon: 'mdi-language-html5', color: 'orange' },
                 { name: 'CSS', icon: 'mdi-language-css3', color: 'blue lighten-1' },
                 { name: 'Sass', icon: 'mdi-sass', color: 'pink lighten-2' },
@@ -60,10 +61,10 @@ export default class Skills extends Vue {
             text: "Since I've decided to become a programmer 6 years ago I've learned a lot of languages and I still doing it, because I'm curious and I love to discover the features that every language has.",
             tools: [
                 { name: 'PHP', icon: 'mdi-language-php', color: 'indigo' },
+                { name: 'Python', icon: 'mdi-language-python', color: 'yellow darken-2' },
                 { name: 'Typescript', icon: 'mdi-language-typescript', color: 'blue darken-2' },
                 { name: 'Javascript', icon: 'mdi-language-javascript', color: 'yellow darken-3' },
                 { name: 'Java', icon: 'mdi-language-java', color: 'red darken-1' },
-                { name: 'Python', icon: 'mdi-language-python', color: 'yellow darken-2' },
                 { name: 'C', icon: 'mdi-language-c', color: 'blue darken-1' },
                 { name: 'C++', icon: 'mdi-language-cpp', color: 'blue darken-1' },
                 { name: 'C#', icon: 'mdi-language-csharp', color: 'deep-purple' },
@@ -78,9 +79,10 @@ export default class Skills extends Vue {
             icon: 'mdi-server',
             text: "The amount of DB's, frameworks and tool to create the perfect server for an application is too high but that is not a problem for me. I know how to choose the proper DB, language and environment for a specific project.",
             tools: [
+                { name: 'Django / DRF', icon: false, prefix: 'dj', src: 'django.svg' },
                 { name: 'Laravel', icon: 'mdi-laravel', color: 'red' },
                 { name: 'Nuxt', icon: 'mdi-nuxt', color: 'green darken-1' },
-                { name: 'Express / Nest', icon: 'mdi-nodejs', color: 'green' },
+                { name: 'NodeJS', icon: 'mdi-nodejs', color: 'green' },
                 { name: 'MongoDB / Mongoose', icon: 'mdi-code-braces', color: 'yellow darken-3' },
                 { name: 'SQL', icon: 'mdi-database-outline' },
                 { name: 'API Development', icon: 'mdi-api', color: 'brown lighten-1' },

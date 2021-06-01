@@ -3,7 +3,7 @@
     <v-container fluid id="introduction" class="d-flex flex-column align-center justify-space-around" :style="fullHeight">
         <!-- Avatar -->
         <v-avatar size="150px" class="static-el elevation-5 pa-2">
-            <img src="@/assets/me.jpg" alt="Daniel Molina" />
+            <img src="@/assets/dm.jpg" alt="Daniel Molina" />
         </v-avatar>
 
         <!-- Typed text -->

@@ -30,11 +30,20 @@
                     I can turn a thought into a powerful project and communicate that vision to my teammates. Thus, being an acertive workteam leader is something I can do well. <br>
                     I'm a quick learner because I've always searched for knowledge by my own. I also like to discover new features, frameworks and languages, therefore I'd be able to work within any environment.
                 </p>
-                <!-- TODO: implement download feature -->
-                <!-- <v-btn :block="mobile" width="250px" rounded dark color="blue-grey darken-4">
+                <!-- Resume file -->
+                <v-btn 
+                    rounded 
+                    dark 
+                    width="250px" 
+                    color="blue-grey darken-4"
+                    target="_blank"
+                    href="Carlos Daniel Molina Vargas.pdf"
+                    download
+                    :block="mobile" 
+                >
                     Resume
                     <v-icon right>mdi-cloud-download</v-icon>
-                </v-btn> -->
+                </v-btn>
             </v-container>
         </section>
         

@@ -110,10 +110,20 @@
 import { MetaInfo } from "vue-meta";
 import { Component, Vue } from "vue-property-decorator";
 
-@Component ({
+import firebase from "firebase/app";
+
+@Component({
     metaInfo(): MetaInfo {
+        firebase.analytics().logEvent("page_view");
+        firebase.analytics().logEvent("screen_view", {
+            'app_name': process.env.VUE_APP_PROJECT,
+            'app_type': process.env.VUE_APP_TYPE,
+            'screen_name': 'Contact',
+            'app_version': process.env.VUE_APP_VERSION
+        });
+
         return {
-            title: 'Contact | DM'
+            title: 'Contact'
         };
     }
 })

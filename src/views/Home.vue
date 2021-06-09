@@ -62,10 +62,20 @@ import Skills from "@/components/Skills.vue";
 import Knowledge from "@/components/Knowledge.vue";
 import About from "@/components/About.vue";
 
+import firebase from "firebase/app";
+
 @Component({
     metaInfo(): MetaInfo {
+        firebase.analytics().logEvent("page_view");
+        firebase.analytics().logEvent("screen_view", {
+            'app_name': process.env.VUE_APP_PROJECT,
+            'app_type': process.env.VUE_APP_TYPE,
+            'screen_name': 'Home',
+            'app_version': process.env.VUE_APP_VERSION
+        });
+
         return {
-            title: "Resume | DM",
+            title: "Home",
         };
     },
 

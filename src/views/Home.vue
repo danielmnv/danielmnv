@@ -36,10 +36,8 @@
                     dark 
                     width="250px" 
                     color="blue-grey darken-4"
-                    target="_blank"
-                    href="Carlos Daniel Molina Vargas.pdf"
-                    download
-                    :block="mobile" 
+                    :block="mobile"
+                    @click="downloadCV"
                 >
                     Resume
                     <v-icon right>mdi-cloud-download</v-icon>
@@ -91,6 +89,22 @@ export default class Home extends Vue {
 
     mounted() {
         setTimeout(() => this.loading = false, 600);
+    }
+
+    // Download cv file
+    downloadCV() {
+        // Log
+        this.$analytics.logEvent("download_cv");
+
+        // Create element with pdf to download
+        const link = document.createElement('a');
+
+        link.href = process.env.VUE_APP_CV_FILE;
+        link.download = `${process.env.VUE_APP_AUTHOR}`;
+        link.click();
+
+        // Delete node
+        link.remove()
     }
 
     // Is mobile or not

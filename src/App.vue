@@ -22,12 +22,20 @@
 </template>
 
 <script lang="ts">
+import { MetaInfo } from "vue-meta";
 import { Component, Vue } from 'vue-property-decorator';
 import AppSideNav from "@/components/AppSideNav.vue";
 import AppBottomNav from "@/components/AppBottomNav.vue";
 import FabTop from "@/components/FabTop.vue";
 
 @Component ({
+	metaInfo(): MetaInfo {
+        return {
+            title: "Resume",
+			titleTemplate: '%s | DM'
+        };
+    },
+
 	components: {
 		AppSideNav,
 		AppBottomNav,

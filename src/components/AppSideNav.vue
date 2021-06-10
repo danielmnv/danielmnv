@@ -143,6 +143,10 @@ export default class AppSideNav extends Vue {
         this.chosenSideSanck = true;
 		this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
         localStorage.setItem('light', (!this.$vuetify.theme.dark).toString());
+        this.$analytics.logEvent("toggle_theme", {
+            'dark': this.$vuetify.theme.dark.toString()
+        });
+
     }
 }
 </script>

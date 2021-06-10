@@ -8,7 +8,7 @@ import 'firebase/analytics'
 
 Vue.config.productionTip = false;
 
-Vue.use(VueGoogleMaps, { load: { key: process.env.VUE_APP_MAPS_API }});
+Vue.use(VueGoogleMaps, { load: { key: process.env.VUE_APP_FB_API_KEY }});
 
 firebase.initializeApp({
   apiKey: process.env.VUE_APP_FB_API_KEY,

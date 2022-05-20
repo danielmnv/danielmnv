@@ -6,6 +6,9 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - master
+    paths:
+      - '!/.github/profile/**'
+      - '!README.md'
 
 env:
   VUE_APP_FB_API_KEY: ${{ secrets.FB_API_KEY }}

@@ -1,6 +1,6 @@
 # <img alt="Daniel Molina" src="https://raw.githubusercontent.com/danielmnv/danielmnv/master/.github/profile/intro.gif"></img> Hello there 👋
 
-My name is Daniel Molina, I'm a software developer and. I'm from Aguascalientes, México 🇲🇽, take a look at my [portfolio](https://danielmolina.me) 👈.
+My name is Daniel Molina, I'm a software developer and I'm from Aguascalientes, México 🇲🇽, take a look at my [portfolio](https://danielmolina.me) 👈
 
 #### Connect with me
 
@@ -70,5 +70,5 @@ My name is Daniel Molina, I'm a software developer and. I'm from Aguascalientes,
 Besides coding, I'm a serioholic ❤️ you can check my Trakt's profile to see my most beloved series.
 
 <p align="center">
-    <a target="_blank" href="https://trakt.tv/users/danielmnv"><img width="500" height="281" alt="danielmnv" src="https://widgets.trakt.tv/users/412236c7f286ee2fc53e40331ab9d702/watched/fanart2@2x.jpg" /></a>
+    <a target="_blank" href="https://trakt.tv/users/danielmnv"><img alt="danielmnv" src="https://widgets.trakt.tv/users/412236c7f286ee2fc53e40331ab9d702/watched/fanart2@2x.jpg" /></a>
 </p>

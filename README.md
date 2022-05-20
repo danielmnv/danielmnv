@@ -1,8 +1,6 @@
 # <img alt="Daniel Molina" src="https://raw.githubusercontent.com/danielmnv/danielmnv/master/.github/profile/intro.gif"></img> Hello there 👋
 
-My name is Daniel Molina, I'm a software developer and. I'm from Aguascalientes, México 🇲🇽, take a look at my portfolio 👇.
-
-[<p align="center"><img height="350" alt="danielmolina.me" src="https://raw.githubusercontent.com/danielmnv/danielmnv/master/.github/profile/site.png" /></p>](https://danielmolina.me)
+My name is Daniel Molina, I'm a software developer and. I'm from Aguascalientes, México 🇲🇽, take a look at my [portfolio](https://danielmolina.me) 👈.
 
 #### Connect with me
 

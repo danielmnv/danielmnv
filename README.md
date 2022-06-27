@@ -61,6 +61,9 @@ My name is Daniel Molina, I'm a software developer and I'm from Aguascalientes, 
         <img align="center" src="http://readme-stats.vercel.danielmolina.me/api?username=danielmnv&hide=stars&count_private=true&show_icons=true&include_all_commits=true&custom_title=Stats&title_color=fff&bg_color=212121&text_color=E0E0E0&border_color=BDBDBD&icon_color=00BCD4">
     </a>
     <a href="https://github.com/danielmnv/github-readme-stats" target="_blank">
+        <img align="center" src="http://readme-stats.vercel.danielmolina.me/api/wakatime/?username=danielmnv&layout=compact&langs_count=6&title_color=fff&bg_color=212121&text_color=E0E0E0&border_color=BDBDBD">
+    </a>
+    <a href="https://github.com/danielmnv/github-readme-stats" target="_blank">
         <img align="center" src="http://readme-stats.vercel.danielmolina.me/api/top-langs/?username=danielmnv&layout=compact&langs_count=6&hide=html&title_color=fff&bg_color=212121&text_color=E0E0E0&border_color=BDBDBD">
     </a>
 </p>

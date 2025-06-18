@@ -37,7 +37,7 @@
 
   body {
     @apply transition-colors duration-300 ease-in-out;
-    @apply bg-gradient-to-bl from-primary/20 via-transparent to-secondary/20 dark:from-primary/10 dark:to-secondary/5;
+    @apply bg-gradient-to-b from-primary/20 via-transparent to-secondary/20 dark:from-primary/10 dark:to-secondary/5 lg:bg-gradient-to-bl;
   }
 }
 

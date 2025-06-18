@@ -1,0 +1,23 @@
+.mobile-menu {
+  @apply fixed left-0 right-0 top-0 z-50 -translate-y-full transition-all duration-300 ease-in-out lg:hidden;
+
+  &.visible {
+    @apply translate-y-0 bg-background/60 shadow-sm backdrop-blur;
+  }
+
+  .mobile-menu-content {
+    @apply flex items-center justify-between px-6 py-4 md:px-12 lg:px-24;
+
+    .mobile-menu-left {
+      @apply flex items-center gap-4;
+
+      .mobile-menu-logo {
+        @apply h-8 w-auto;
+      }
+
+      .mobile-menu-active-section {
+        @apply bg-primary bg-clip-text text-base font-bold text-transparent;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { GithubIcon } from '@/components/icons/GithubIcon';
 import { InstagramIcon } from '@/components/icons/Instagram';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { TraktTvIcon } from '@/components/icons/TraktTvIcon';
+import { StatsFM } from '../icons/StatsFM';
 
 interface SocialLink {
   name: string;
@@ -35,6 +36,11 @@ const socialLinks: SocialLink[] = [
     name: 'Goodreads',
     url: 'https://goodreads.com/user/show/178085456-daniel-molina',
     icon: <GoodreadsIcon className="social-icon" />,
+  },
+  {
+    name: 'StatsFM',
+    url: 'https://stats.fm/danielmnv',
+    icon: <StatsFM className="social-icon" />,
   },
 ];
 

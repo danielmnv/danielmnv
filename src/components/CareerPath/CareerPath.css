@@ -8,14 +8,18 @@
       @apply flex flex-col gap-2;
 
       .career-path-card-details-time {
-        @apply flex items-baseline gap-2 text-sm text-neutral-200;
+        @apply flex w-[calc(100%-1.25rem)] flex-col items-baseline gap-2 text-sm text-neutral-200 sm:flex-row;
 
         .career-path-card-details-time-range {
-          @apply font-semibold transition-colors duration-300 group-hover:text-primary;
+          @apply shrink-0 font-semibold transition-colors duration-300 group-hover:text-primary;
         }
 
         .career-path-card-details-time-location {
           @apply font-semibold text-primary/80 transition-colors duration-300 group-hover:text-neutral-300;
+        }
+
+        .career-path-card-details-time-separator {
+          @apply hidden sm:block;
         }
       }
 

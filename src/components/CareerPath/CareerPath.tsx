@@ -46,7 +46,7 @@ function ExperienceContent({ experience }: { experience: Experience }) {
         <div className="career-path-card-details">
           <div className="career-path-card-details-time">
             <time className="career-path-card-details-time-range">{experience.range}</time>
-            <span>·</span>
+            <span className="career-path-card-details-time-separator">·</span>
             <span className="career-path-card-details-time-location">{experience.location}</span>
           </div>
 

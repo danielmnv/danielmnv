@@ -20,7 +20,7 @@ export function useCareerPath() {
         })) as Experience[];
         setExperiences(experiencesData);
       } catch (err) {
-        setError(new Error('Failed to fetch career path'));
+        setError(new Error('Failed to fetch career path', { cause: err }));
       } finally {
         setLoading(false);
       }
@@ -48,7 +48,7 @@ export function useProjects() {
         })) as Project[];
         setProjects(projectsData);
       } catch (err) {
-        setError(new Error('Failed to fetch projects'));
+        setError(new Error('Failed to fetch projects', { cause: err }));
       } finally {
         setLoading(false);
       }
@@ -77,7 +77,7 @@ export function useOverview() {
           } as Overview);
         }
       } catch (err) {
-        setError(new Error('Failed to fetch overview'));
+        setError(new Error('Failed to fetch overview', { cause: err }));
       } finally {
         setLoading(false);
       }

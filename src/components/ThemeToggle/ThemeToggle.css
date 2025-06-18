@@ -1,7 +1,35 @@
-.theme-toggle {
-  @apply h-6 w-6 transition-transform duration-300 ease-in-out hover:rotate-90 hover:scale-110;
+.theme-button-group {
+  @apply flex w-fit rounded-lg border border-neutral-100/10 bg-transparent backdrop-blur-sm;
+}
 
-  .toggle-icon {
-    @apply h-6 w-6 text-neutral-200 hover:text-primary;
+.theme-button {
+  @apply relative flex h-8 w-8 items-center justify-center text-neutral-200 transition-all duration-200 hover:text-neutral-500;
+
+  .button-icon {
+    @apply h-5 w-5;
+  }
+
+  /* First button - rounded left */
+  &:first-child {
+    @apply rounded-l-lg;
+  }
+
+  /* Last button - rounded right */
+  &:last-child {
+    @apply rounded-r-lg;
+  }
+
+  /* Active state */
+  &.active {
+    @apply bg-neutral-100/10;
+
+    .button-icon {
+      @apply text-neutral-400;
+    }
+  }
+
+  /* Active state */
+  &:active {
+    @apply scale-95;
   }
 }

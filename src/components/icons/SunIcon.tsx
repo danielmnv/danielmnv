@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import { AriaAttributes } from 'react';
 
-export function SunIcon({ className, ...props }: { className?: string } & AriaAttributes) {
+export function SunIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,11 +8,7 @@ export function SunIcon({ className, ...props }: { className?: string } & AriaAt
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={classNames(
-        'h-6 w-6 transition-transform duration-500 ease-in-out hover:rotate-90 hover:scale-110',
-        className
-      )}
-      {...props}
+      className={classNames(className)}
     >
       <path
         strokeLinecap="round"

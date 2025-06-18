@@ -4,6 +4,7 @@ import { InstagramIcon } from '@/components/icons/Instagram';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { TraktTvIcon } from '@/components/icons/TraktTvIcon';
 import { StatsFM } from '../icons/StatsFM';
+import { WakaTimeIcon } from '../icons/WakaTimeIcon';
 
 interface SocialLink {
   name: string;
@@ -16,6 +17,11 @@ const socialLinks: SocialLink[] = [
     name: 'GitHub',
     url: 'https://github.com/danielmnv',
     icon: <GithubIcon className="social-icon" />,
+  },
+  {
+    name: 'WakaTime',
+    url: 'https://wakatime.com/@danielmnv',
+    icon: <WakaTimeIcon className="social-icon" />,
   },
   {
     name: 'LinkedIn',
@@ -47,7 +53,7 @@ const socialLinks: SocialLink[] = [
 export function SocialLinks() {
   return (
     <ul
-      className="ml-0 mt-8 flex items-center justify-center lg:ml-1 lg:justify-start"
+      className="ml-0 mt-8 flex flex-wrap items-center justify-center gap-y-2 lg:ml-1 lg:justify-start"
       aria-label="Social media"
     >
       {socialLinks.map((social) => (

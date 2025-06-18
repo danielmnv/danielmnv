@@ -1,8 +1,8 @@
 .mobile-menu {
-  @apply fixed left-1/2 top-4 z-50 w-[calc(100%-3rem)] max-w-3xl -translate-x-1/2 -translate-y-full transition-all duration-300 ease-in-out md:w-[calc(100%-6rem)] lg:hidden;
+  @apply fixed left-1/2 top-4 z-50 w-[calc(100%-3rem)] max-w-3xl -translate-x-1/2 -translate-y-20 rounded-2xl border border-neutral-100/20 bg-background/60 shadow-lg backdrop-blur transition-all duration-300 ease-in-out md:w-[calc(100%-6rem)] lg:hidden;
 
   &.visible {
-    @apply translate-y-0 rounded-2xl border border-neutral-100/20 bg-background/60 shadow-lg backdrop-blur;
+    @apply translate-y-0;
   }
 
   .mobile-menu-content {

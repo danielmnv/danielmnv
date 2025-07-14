@@ -12,6 +12,8 @@
   </div>
 </div>
 
+![](https://komarev.com/ghpvc/?username=danielmnv&style=flat&color=64748b&logoColor=red)
+
 A few things I enjoy beyond the code:
 
 [![Trakt](https://img.shields.io/badge/Trakt-64748b?style=for-the-badge&logo=trakt&logoColor=64748b&labelColor=hsla%28215%2C%2016%25%2C%2047%25%2C%200.1%29)](https://trakt.tv/users/danielmnv)[![Stats.fm](https://img.shields.io/badge/Stats.fm-64748b?style=for-the-badge&logo=spotify&logoColor=64748b&labelColor=hsla%28215%2C%2016%25%2C%2047%25%2C%200.1%29)](https://stats.fm/danielmnv)[![Goodreads](https://img.shields.io/badge/Goodreads-64748b?style=for-the-badge&logo=goodreads&logoColor=64748b&labelColor=hsla%28215%2C%2016%25%2C%2047%25%2C%200.1%29)](https://www.goodreads.com/user/show/178085456-daniel-molina)

@@ -1,0 +1,19 @@
+---
+// 1. Data Fetching (Happens on the server/at build time)
+// If using local JSON: import overview from '../data/overview.json';
+// If using an API:
+import * as overview from '@/data/overview.json';
+import Section from '@/components/Section.astro';
+---
+
+<Section id="overview" title="Overview">
+  {
+    overview ? (
+      <div class="prose prose-invert text-justify leading-normal text-neutral-300">
+        {overview.content}
+      </div>
+    ) : (
+      <p class="text-red-400">Failed to load overview.</p>
+    )
+  }
+</Section>

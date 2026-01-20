@@ -1,0 +1,19 @@
+---
+import Chip from './Chip.astro';
+
+interface Props {
+  chips: string[];
+}
+
+const { chips, ...props } = Astro.props;
+---
+
+<ul class="flex flex-1 flex-wrap gap-2" {...props}>
+  {
+    chips.map((chip) => (
+      <li class="list-none">
+        <Chip content={chip} />
+      </li>
+    ))
+  }
+</ul>

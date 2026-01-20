@@ -1,7 +1,0 @@
-.card {
-  @apply relative rounded-xl bg-neutral-100/10 p-6 transition-colors duration-300 hover:bg-neutral-100/20;
-
-  &.clickable {
-    @apply block cursor-pointer;
-  }
-}

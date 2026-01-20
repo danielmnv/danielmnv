@@ -1,0 +1,55 @@
+---
+import Section from '@/components/Section.astro';
+import { getCollection } from 'astro:content';
+import Card from './Card.astro';
+import GithubLinkIcon from '@/assets/github-link.svg';
+import ChipGroup from './ChipGroup.astro';
+import Button from './Button.astro';
+const projects = await getCollection('projects');
+---
+
+<Section id="projects" title="Projects">
+  {
+    projects ? (
+      <div class="space-y-12">
+        {projects.map((project) => (
+          <Card clickable={!!project.data.demoUrl} href={project.data.demoUrl}>
+            <div class="relative grid grid-cols-1 gap-8 lg:grid-cols-12">
+              <div class="lg:col-span-12">
+                <div class="flex h-full flex-col">
+                  <header class="mb-4">
+                    <h3 class="group-hover:text-primary mb-2 text-2xl font-semibold text-neutral-400">
+                      {project.data.title}
+                    </h3>
+                  </header>
+
+                  <div class="grow">
+                    <p class="mb-6 text-base leading-relaxed text-neutral-300 group-hover:text-neutral-400">
+                      {project.data.description}
+                    </p>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-4">
+                    <ChipGroup chips={project.data.technologies} />
+
+                    {project.data.githubUrl && (
+                      <Button
+                        href={project.data.githubUrl}
+                        class="hover:text-primary cursor-pointer text-neutral-200 hover:scale-110"
+                        aria-label="GitHub Repository"
+                      >
+                        <GithubLinkIcon />
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    ) : (
+      <p>No projects found</p>
+    )
+  }
+</Section>

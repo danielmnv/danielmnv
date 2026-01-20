@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "Portfolio Website",
+    "description": "A modern portfolio website built with Astro and React, showcasing professional experience and projects. Features clean design, responsive layouts, dark mode support, and optimal performance through static site generation.",
+    "technologies": ["Astro", "React", "Tailwind CSS", "TypeScript"],
+    "githubUrl": "https://github.com/danielmnv/danielmnv"
+  },
+  {
+    "id": "2",
+    "title": "Digital Wedding Invitation Platform",
+    "description": "A full-stack web application for managing wedding invitations with real-time RSVP functionality. Built with Next.js and Supabase, featuring an elegant interface for sharing event details and tracking guest responses.",
+    "technologies": ["Next.js", "React", "DaisyUI", "Motion", "Supabase", "Vercel"],
+    "githubUrl": "https://github.com/danielmnv/wedding",
+    "demoUrl": "https://carolinandaniel.love"
+  }
+]

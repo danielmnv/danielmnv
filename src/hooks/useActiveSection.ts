@@ -11,48 +11,39 @@ export function useActiveSection(): string | null {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Get all sections and their title containers
-      const sections = document.querySelectorAll<HTMLElement>('section[id]');
-
-      // Get current scroll position with offset for the header
-      const scrollPosition = window.scrollY + 100;
-
-      // Find the current section
-      for (const section of sections) {
-        const titleContainer = section.querySelector<HTMLElement>('div:first-child');
-        if (!titleContainer) continue;
-
-        const titleBottom = titleContainer.offsetTop + titleContainer.offsetHeight;
-
-        // When scrolling down, show section name after passing its title
-        if (scrollPosition > titleBottom) {
-          setActiveSection(getSectionName(section.id));
-          continue;
+    const handleIntersect: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        // We only update if the section is entering the top 20% of the screen
+        if (entry.isIntersecting) {
+          setActiveSection(getSectionName(entry.target.id));
         }
-
-        // When scrolling up and reaching a title, clear the section name
-        if (scrollPosition <= titleBottom) {
-          const sectionName = getSectionName(section.id);
-
-          if (sectionName === activeSection) {
-            setActiveSection(null);
-          }
-          break;
-        }
-      }
-
-      // If we're at the very top of the page, clear the active section
-      if (window.scrollY < 50) {
-        setActiveSection(null);
-      }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call once to set initial state
+    const observer = new IntersectionObserver(handleIntersect, {
+      /* rootMargin: top right bottom left
+         This margin 'shrinks' the detection area. 
+         -20% from top means the trigger line is 20% down from the top of the screen.
+         -75% from bottom means we ignore everything in the bottom 75% of the screen.
+      */
+      rootMargin: '-20% 0px -75% 0px',
+      threshold: 0, // Trigger as soon as 1 pixel enters that thin strip
+    });
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]); // Add activeSection as dependency since we use it in the callback
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    const handleTopScroll = () => {
+      if (window.scrollY < 100) setActiveSection(null);
+    };
+
+    window.addEventListener('scroll', handleTopScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleTopScroll);
+    };
+  }, []);
 
   return activeSection;
 }

@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Light values by default */
+  --color-primary: rgba(63, 81, 181, 1);
+  --color-secondary: rgba(255, 178, 71, 1);
+  --color-background: rgba(255, 255, 255, 1);
+  --color-foreground: rgba(0, 0, 0, 1);
+  --color-neutral-50: rgba(248, 250, 252, 1);
+  --color-neutral-100: rgba(100, 116, 139, 1);
+  --color-neutral-200: rgba(71, 85, 105, 1);
+  --color-neutral-300: rgba(51, 65, 85, 1);
+  --color-neutral-400: rgba(30, 41, 59, 1);
+  --color-neutral-500: rgba(15, 23, 42, 1);
+}
+
+/* globals.css */
+@layer base {
+  .dark {
+    --color-primary: rgba(0, 180, 180, 1);
+    --color-secondary: rgba(245, 0, 86, 1);
+    --color-background: rgba(23, 25, 28, 1);
+    --color-foreground: rgba(255, 255, 255, 1);
+    --color-neutral-50: rgba(2, 6, 23, 1);
+    --color-neutral-100: rgba(100, 116, 139, 1);
+    --color-neutral-200: rgba(148, 163, 184, 1);
+    --color-neutral-300: rgba(203, 213, 225, 1);
+    --color-neutral-400: rgba(226, 232, 240, 1);
+    --color-neutral-500: rgba(241, 245, 249, 1);
+  }
+}

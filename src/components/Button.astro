@@ -1,0 +1,27 @@
+---
+interface Props {
+  class?: string;
+  href?: string;
+}
+
+const { href, class: className, ...props } = Astro.props;
+---
+
+<div class:list={className} data-action="link" data-href={href} {...props}>
+  <slot />
+</div>
+
+<script>
+  // Handle GitHub link clicks when inside a clickable card (button instead of anchor)
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element;
+    const button = target.closest('[data-action="link"][data-href]');
+    if (button) {
+      e.stopPropagation();
+      const href = button.getAttribute('data-href');
+      if (href) {
+        window.open(href, '_blank', 'noopener');
+      }
+    }
+  });
+</script>

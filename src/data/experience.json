@@ -1,0 +1,82 @@
+[
+  {
+    "id": "quipli",
+    "company": "Quipli",
+    "location": "Atlanta, United States - Remote",
+    "range": "2021 - Present",
+    "technologies": [
+      "PHP",
+      "TypeScript",
+      "React",
+      "Express.js",
+      "Vitest",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "RabbitMQ",
+      "AWS",
+      "Google Cloud",
+      "Terraform",
+      "Docker",
+      "Liquibase"
+    ],
+    "url": "https://quipli.com",
+    "roles": [
+      {
+        "title": "Front-end Developer",
+        "description": "Leading front-end development for a high-traffic e-commerce platform and admin console. Implementing features, system migrations, and refactoring efforts. Establishing test coverage using Vitest to ensure code quality.",
+        "range": "2025 - Present"
+      },
+      {
+        "title": "Software Developer (Contractor)",
+        "description": "Developed infrastructure and features for a production e-commerce platform serving multiple customer sites. Architected a request gateway system to bridge legacy and modern applications. Built integrations with third-party APIs, automated deployments, and background job processing systems.",
+        "range": "2021 - 2024"
+      }
+    ]
+  },
+  {
+    "id": "improving",
+    "company": "Improving",
+    "location": "Aguascalientes, México - Hybrid",
+    "range": "2021 - 2024",
+    "technologies": [],
+    "url": "https://improving.com",
+    "roles": [
+      {
+        "title": "Software Specialist",
+        "description": "Software specialist on a long-term client engagement.",
+        "range": "2021 - 2024"
+      }
+    ]
+  },
+  {
+    "id": "lion-intel",
+    "company": "Lion Intel",
+    "location": "Aguascalientes, México - On-site",
+    "range": "2019 - 2021",
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "Symfony",
+      "Vue",
+      "Inertia.js",
+      "MySQL",
+      "Docker",
+      "Python",
+      "Django"
+    ],
+    "url": "https://solutionslion.com",
+    "roles": [
+      {
+        "title": "Software Engineer",
+        "description": "Designed and developed REST APIs for integrations between online stores, e-commerce platforms, and third-party services. Implemented secure authentication, optimized database queries, and ensured API scalability.",
+        "range": "2020-2021"
+      },
+      {
+        "title": "Software Engineer (Internship)",
+        "description": "Built new features and maintained an ECRM system serving multiple customers. Developed functionality to support customer relationship management workflows.",
+        "range": "2019-2020"
+      }
+    ]
+  }
+]

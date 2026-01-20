@@ -1,7 +1,0 @@
-.chip-group {
-  @apply flex flex-1 flex-wrap gap-2;
-}
-
-.chip {
-  @apply rounded-full bg-primary/80 px-3 py-1 text-sm text-neutral-50 transition-colors duration-300 group-hover:bg-primary/50 dark:bg-primary/10 dark:text-neutral-500 dark:group-hover:bg-primary/20;
-}

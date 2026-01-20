@@ -1,0 +1,78 @@
+---
+import Section from '@/components/Section.astro';
+import { getCollection } from 'astro:content';
+import Card from './Card.astro';
+import ChipGroup from './ChipGroup.astro';
+const experience = await getCollection('experience');
+---
+
+<Section id="career-path" title="Career Path">
+  <div class="space-y-12">
+    {
+      experience.map((experience) => (
+        <Card clickable={true} href={experience.data.url}>
+          <div class="group relative">
+            <div class="mb-6">
+              <div class="flex flex-col gap-2">
+                <div class="flex w-[calc(100%-1.25rem)] flex-col items-baseline gap-2 text-sm text-neutral-200 sm:flex-row">
+                  <time class="group-hover:text-primary shrink-0 font-semibold transition-colors duration-300">
+                    {experience.data.range}
+                  </time>
+                  <span class="hidden sm:block">·</span>
+                  <span class="text-primary/80 font-semibold transition-colors duration-300 group-hover:text-neutral-300">
+                    {experience.data.location}
+                  </span>
+                </div>
+
+                <div class="group-hover:text-primary text-lg font-semibold text-neutral-400 transition-colors duration-300">
+                  {experience.data.company}
+                </div>
+
+                {experience.data.roles.length === 1 ? (
+                  <>
+                    <h3 class="text-lg font-semibold text-neutral-300 transition-colors duration-300 group-hover:text-neutral-200">
+                      {experience.data.roles[0].title}
+                    </h3>
+                    <div class="mb-6">
+                      <p class="text-base leading-relaxed text-neutral-300 transition-colors duration-300 group-hover:text-neutral-400">
+                        {experience.data.roles[0].description}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <div class="relative mt-2 space-y-6">
+                    {experience.data.roles.map((role) => (
+                      <div class="relative pl-8 before:absolute before:-bottom-3 before:left-1.5 before:h-[calc(100%-24px)] before:w-0.5 before:bg-neutral-100/60 last:before:hidden">
+                        {/* Role dot */}
+                        <div class="absolute top-2 left-0 flex h-3 w-3 items-center justify-center rounded-full">
+                          <div class="bg-primary absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full" />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                          <div>
+                            <time class="text-primary/80 font-semibold">{role.range}</time>
+                          </div>
+                          <h3 class="text-lg font-semibold text-neutral-300 transition-colors duration-300 group-hover:text-neutral-200">
+                            {role.title}
+                          </h3>
+                          <p class="text-base leading-relaxed text-neutral-300 transition-colors duration-300 group-hover:text-neutral-400">
+                            {role.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {experience.data.technologies.length > 0 && (
+              <div>
+                <ChipGroup chips={experience.data.technologies} />
+              </div>
+            )}
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</Section>

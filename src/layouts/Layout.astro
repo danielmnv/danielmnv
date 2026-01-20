@@ -1,0 +1,75 @@
+---
+import '../styles/global.css';
+import Logo from '@/components/Logo.astro';
+import Header from '@/components/Header.astro';
+import SocialLinks from '@/components/SocialLinks.astro';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { MobileMenu } from '@/components/MobileMenu';
+import Head from '@/components/Head.astro';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <Head />
+    <script is:inline>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const theme = getTheme();
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-background transition-colors duration-300 ease-in-out">
+    <main
+      class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0"
+    >
+      <MobileMenu client:load>
+        <Logo />
+      </MobileMenu>
+
+      <div class="lg:flex lg:justify-between lg:gap-4">
+        <header class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:py-24">
+          <div class="mb-8 flex items-center justify-between">
+            <Logo />
+            <div class="lg:hidden">
+              <ThemeToggle client:load />
+            </div>
+          </div>
+
+          <div class="lg:flex lg:flex-1 lg:flex-col lg:justify-center">
+            <div class="gap-6 lg:flex lg:flex-col">
+              <Header />
+              <SocialLinks />
+            </div>
+          </div>
+
+          <div class="hidden lg:mt-8 lg:block">
+            <ThemeToggle client:load />
+          </div>
+        </header>
+
+        <div class="pt-24 lg:w-1/2 lg:py-24">
+          <slot />
+        </div>
+      </div>
+    </main>
+
+    <Analytics />
+    <SpeedInsights />
+  </body>
+</html>

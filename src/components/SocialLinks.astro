@@ -1,0 +1,63 @@
+---
+import GithubIcon from '@/assets/github.svg';
+import WakaTimeIcon from '@/assets/wakatime.svg';
+import LinkedInIcon from '@/assets/linkedin.svg';
+import InstagramIcon from '@/assets/instagram.svg';
+import TraktIcon from '@/assets/trakt.svg';
+import GoodreadsIcon from '@/assets/goodreads.svg';
+import StatsFMIcon from '@/assets/statsfm.svg';
+
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/danielmnv',
+    Icon: GithubIcon,
+  },
+  {
+    name: 'WakaTime',
+    url: 'https://wakatime.com/@danielmnv',
+    Icon: WakaTimeIcon,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/danielmnv',
+    Icon: LinkedInIcon,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/danielmnvz',
+    Icon: InstagramIcon,
+  },
+  {
+    name: 'Trakt',
+    url: 'https://trakt.tv/users/danielmnv',
+    Icon: TraktIcon,
+  },
+  {
+    name: 'Goodreads',
+    url: 'https://goodreads.com/user/show/178085456-daniel-molina',
+    Icon: GoodreadsIcon,
+  },
+  {
+    name: 'StatsFM',
+    url: 'https://stats.fm/danielmnv',
+    Icon: StatsFMIcon,
+  },
+];
+---
+
+<ul
+  class="mt-8 ml-0 flex flex-wrap items-center justify-center gap-y-2 lg:ml-1 lg:justify-start"
+  aria-label="Social media"
+>
+  {
+    socialLinks.map(({ name, url, Icon }) => (
+      <li class="mr-5 text-xs">
+        <a class="block hover:text-slate-200" href={url} target="_blank">
+          <span class="sr-only">{name}</span>
+          <Icon class="hover:text-primary h-6 w-6 fill-current text-neutral-200 transition-colors duration-300" />
+        </a>
+      </li>
+    ))
+  }
+</ul>

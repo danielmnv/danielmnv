@@ -1,7 +1,0 @@
-.download-button {
-  @apply inline-flex items-center gap-2 rounded-full bg-neutral-300 px-4 py-2 text-sm font-medium tracking-wider text-neutral-50 transition-all duration-300 hover:scale-105 hover:bg-neutral-500;
-
-  .download-icon {
-    @apply h-4 w-4;
-  }
-}

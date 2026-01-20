@@ -1,0 +1,12 @@
+---
+import Button from './Button.astro';
+import DownloadIcon from '@/assets/download.svg';
+---
+
+<Button
+  href="/resume.pdf"
+  class="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-neutral-300 px-4 py-2 text-sm font-medium tracking-wider text-neutral-50 transition-all duration-300 hover:scale-105 hover:bg-neutral-500"
+>
+  <span>Download Resume</span>
+  <DownloadIcon class="h-4 w-4" />
+</Button>

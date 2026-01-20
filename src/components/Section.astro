@@ -1,0 +1,26 @@
+---
+// 1. Define the props
+interface Props {
+  id: string;
+  title: string;
+  class?: string; // To allow extra classes passed from outside
+}
+
+const { id, title, class: className, ...props } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={['mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24', className]}
+  {...props}
+>
+  <div class="mb-8">
+    <h2
+      class="border-primary/50 border-b pb-4 text-sm font-bold tracking-widest text-neutral-200 uppercase"
+    >
+      {title}
+    </h2>
+  </div>
+
+  <slot />
+</section>

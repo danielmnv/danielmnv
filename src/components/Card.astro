@@ -1,0 +1,35 @@
+---
+import ExternalLinkIcon from '@/assets/external-link.svg';
+import Button from './Button.astro';
+
+interface Props {
+  class?: string;
+  clickable?: boolean;
+  href?: string;
+}
+
+const { href, clickable = false, class: className, ...props } = Astro.props;
+---
+
+<div class="group transition-all duration-500 ease-out">
+  <Button
+    class:list={[
+      'relative block rounded-xl bg-neutral-100/10 p-6 transition-colors duration-300 hover:bg-neutral-100/20',
+      clickable ? 'cursor-pointer' : '',
+      className,
+    ]}
+    href={href}
+    {...props}
+  >
+    {
+      clickable && (
+        <ExternalLinkIcon
+          class="group-hover:text-primary absolute top-6 right-6 h-5 w-5 text-neutral-200 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          stroke-width={2}
+        />
+      )
+    }
+
+    <slot />
+  </Button>
+</div>

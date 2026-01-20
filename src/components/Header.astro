@@ -1,0 +1,29 @@
+---
+import DownloadResume from '@/components/DownloadResume.astro';
+import { Image } from 'astro:assets';
+import profilePhoto from '@/assets/profile-photo.png';
+---
+
+<div class="flex flex-col items-center gap-8 text-center lg:items-start lg:text-left">
+  <div
+    class="relative mb-6 h-48 w-48 overflow-hidden rounded-full shadow-lg ring-2 shadow-neutral-100 ring-neutral-100/60 transition-colors duration-300 ease-in-out dark:shadow-neutral-50"
+  >
+    <Image
+      src={profilePhoto}
+      alt="Daniel Molina"
+      width={192}
+      height={192}
+      class="object-cover transition-transform duration-300 ease-in-out"
+    />
+  </div>
+  <div class="flex flex-col gap-2">
+    <h1 class="text-4xl font-medium tracking-tight text-neutral-500 sm:text-5xl">Daniel Molina</h1>
+    <h2 class="text-2xl font-thin tracking-tight text-neutral-400 sm:text-4xl">
+      Full Stack Engineer
+    </h2>
+    <p class="leading-normal tracking-wide text-neutral-300">
+      I craft beautiful, efficient websites and applications.
+    </p>
+  </div>
+  <DownloadResume />
+</div>
